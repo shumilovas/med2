@@ -913,7 +913,7 @@
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[3]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1020,7 +1020,7 @@ traceln("сложность " +agent.сложность +" agent.сложнос�
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[3]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2123,7 +2123,7 @@ traceln("сложность " +agent.сложность +" agent.сложнос�
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[4]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2230,7 +2230,7 @@ traceln("сложность3 " +agent.сложность +" agent.сложнос
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[2]]></Code>
+								<Code><![CDATA[4]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
