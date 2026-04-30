@@ -112,7 +112,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1776173027375</Id>
 					<Name><![CDATA[КоличествоЗаданийВНеделюНачеловека]]></Name>
-					<X>90</X><Y>410</Y>
+					<X>60</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -227,6 +227,21 @@
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[300.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1777580721475</Id>
+					<Name><![CDATA[суммаЗарплат]]></Name>
+					<X>320</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -499,10 +514,9 @@
 ]]></Action>
 				</Event>
 				<Event>
-					<Id>1776342362695</Id>
-					<Name><![CDATA[болезнь]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>620</X><Y>470</Y>
+					<Id>1777580580674</Id>
+					<Name><![CDATA[суммаЗарплатСобытие]]></Name>
+					<X>280</X><Y>480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -516,66 +530,169 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1775594879993</Id>
+						<Id>1777580580672</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1774166400000</OccurrenceDate>
+						<OccurrenceDate>1774080000000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
+							<Code><![CDATA[10]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[частотаБольничных]]></Code>
+							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[ктоБолеет = uniform_discr(1, 5);
-if (ктоБолеет == 1) болезнь1.block();
-if (ктоБолеет == 2) болезнь2.block();
-if (ктоБолеет == 3) болезнь3.block();
-if (ктоБолеет == 4) болезнь4.block();
-if (ктоБолеет == 5) болезнь5.block();
-]]></Action>
+					<Action><![CDATA[for(int i=0; i<работники.size(); i++)
+суммаЗарплат += работники.get(i).зарплата;]]></Action>
 				</Event>
 				<Event>
-					<Id>1776342362724</Id>
-					<Name><![CDATA[выздоровление]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>700</X><Y>470</Y>
+					<Id>1777582710326</Id>
+					<Name><![CDATA[ПовышениеУровня]]></Name>
+					<X>260</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
+					<Properties TriggerType="timeout" Mode="occuresOnce">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879992</Id>
+						<Id>1777582710324</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1774166400000</OccurrenceDate>
+						<OccurrenceDate>1777622400000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[длительностьБолезни]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[частотаБольничных]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (ктоБолеет == 1) болезнь1.unblock();
-if (ктоБолеет == 2) болезнь2.unblock();
-if (ктоБолеет == 3) болезнь3.unblock();
-if (ктоБолеет == 4) болезнь4.unblock();
-if (ктоБолеет == 5) болезнь5.unblock();
-суммаБольничных += длительностьБолезни*часЗарплаты;]]></Action>
 				</Event>
 			</Events>
+			<Schedules>
+				<Schedule>
+					<Id>1777583104780</Id>
+					<Name><![CDATA[расисаниеПерерывов]]></Name>
+					<X>260</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ValueType>onOff</ValueType>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<DefaultValue>false</DefaultValue>
+					<RepresentationMode>intervals</RepresentationMode>
+					<RepresentationType>week</RepresentationType>
+					<FirstDayOfWeek>sunday</FirstDayOfWeek>
+					<TimeUnitsInterval>hours</TimeUnitsInterval>
+					<RepeatTime>86400000</RepeatTime>
+					<RepeatTimeInterval>days</RepeatTimeInterval>
+					<IsSnapTo>false</IsSnapTo>
+					<SnapTo>1777583104753</SnapTo>
+					<SnapToTimeUnits>minutes</SnapToTimeUnits>
+					<AllDayExceptionMode>false</AllDayExceptionMode>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<IntervalsQuery>
+						<Id>1777583104778</Id>
+						<TableReference>
+						</TableReference>
+							<StartColumnReference>
+							</StartColumnReference>
+							<EndColumnReference>
+							</EndColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</IntervalsQuery>
+					<Intervals>
+						<Interval>
+							<Start>0</Start>
+							<End>32400000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>86400000</Start>
+							<End>118800000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>172800000</Start>
+							<End>205200000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>259200000</Start>
+							<End>291600000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>345600000</Start>
+							<End>378000000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>46800000</Start>
+							<End>50400000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>133200000</Start>
+							<End>136800000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>219600000</Start>
+							<End>223200000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>306000000</Start>
+							<End>309600000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>392400000</Start>
+							<End>396000000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>64800000</Start>
+							<End>86340000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>151200000</Start>
+							<End>172740000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>237600000</Start>
+							<End>259140000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>324000000</Start>
+							<End>345540000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>410400000</Start>
+							<End>431940000</End>
+							<Value>true</Value>
+						</Interval>
+					</Intervals>
+					<Exceptions>
+					</Exceptions>
+				</Schedule>
+			</Schedules>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1775594893256</Id>
@@ -1282,7 +1399,7 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						<Parameter>
 							<Name><![CDATA[timeBetweenFailures]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangularAV( unit.здоровье*0.95, 0.1 )]]></Code>
+								<Code><![CDATA[triangularAV( 365*unit.здоровье*0.95, 0.1*unit.здоровье )]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
 						</Parameter>
@@ -1295,7 +1412,7 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						<Parameter>
 							<Name><![CDATA[repairTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangularAV( 1*unit.здоровье, 0.1 )]]></Code>
+								<Code><![CDATA[triangularAV( 1*unit.здоровье, 0.1*unit.здоровье )]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 							</Value>
 						</Parameter>
@@ -1310,9 +1427,15 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[enableBreaks]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[breaksSchedule]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[расисаниеПерерывов]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[breakTaskPriority]]></Name>
@@ -1340,6 +1463,9 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[endOfShiftTaskPreemptionPolicy]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.PP_TERMINATE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[customizeRequestChoice]]></Name>
@@ -2260,6 +2386,50 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<RoundedRectangle>
+					<Id>1777580854949</Id>
+					<Name><![CDATA[roundRectangle4]]></Name>
+					<X>220</X><Y>420</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>216.25663066954644</Width>
+					<Height>171.23</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<ArcRadius>10</ArcRadius>
+				</RoundedRectangle>
+				<Text>
+					<Id>1777580854953</Id>
+					<Name><![CDATA[Деньги]]></Name>
+					<X>320</X><Y>420</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Деньги]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>36</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -2668,7 +2838,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[700]]></Code>
+							<Code><![CDATA[700*продуктивность]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1775594971827</Id>
