@@ -112,7 +112,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1776173027375</Id>
 					<Name><![CDATA[КоличествоЗаданийВНеделюНачеловека]]></Name>
-					<X>90</X><Y>320</Y>
+					<X>90</X><Y>410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -127,7 +127,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1776342050503</Id>
 					<Name><![CDATA[времяМеждуСтандартныммиМедПредприятиями]]></Name>
-					<X>100</X><Y>230</Y>
+					<X>100</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1087,7 +1087,7 @@ if (ктоБолеет == 5) болезнь5.unblock();
 				<EmbeddedObject>
 					<Id>1775595790280</Id>
 					<Name><![CDATA[resourcePool]]></Name>
-					<X>250</X><Y>270</Y>
+					<X>250</X><Y>360</Y>
 					<Label><X>-25</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -1236,9 +1236,6 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[enableMaintenance]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[true]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[initialTimeToMaintenance]]></Name>
@@ -1277,13 +1274,17 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						<Parameter>
 							<Name><![CDATA[initialTimeToFailure]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform( 0, 1000)
-//unit.з ]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+								<Code><![CDATA[uniform( 0, 365*unit.здоровье)
+]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[timeBetweenFailures]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[triangularAV( unit.здоровье*0.95, 0.1 )]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[countBusyOnlyTimeToFailure]]></Name>
@@ -1293,12 +1294,19 @@ if (ктоБолеет == 5) болезнь5.unblock();
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[repairTime]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[triangularAV( 1*unit.здоровье, 0.1 )]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[repairTaskStart]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[repairUsageState]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.USAGE_IDLE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[enableBreaks]]></Name>
@@ -1916,7 +1924,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<EmbeddedObject>
 					<Id>1776338418743</Id>
 					<Name><![CDATA[downtime]]></Name>
-					<X>160</X><Y>390</Y>
+					<X>160</X><Y>480</Y>
 					<Label><X>-25</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2043,9 +2051,15 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[moveBeforeDowntime]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MBD_GO_TO]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[downtimeDestinationType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MAINT_LOC_AGENT]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[downtimeDestinationNode]]></Name>
