@@ -157,7 +157,6 @@
 				<Variable Class="PlainVariable">
 					<Id>1776342362630</Id>
 					<Name><![CDATA[ктоБолеет]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>820</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -547,41 +546,47 @@
 суммаЗарплат += работники.get(i).зарплата;]]></Action>
 				</Event>
 				<Event>
-					<Id>1777582710326</Id>
-					<Name><![CDATA[ПовышениеУровня]]></Name>
-					<X>260</X><Y>560</Y>
+					<Id>1779301220065</Id>
+					<Name><![CDATA[ЕстественноеСнижениеЗдоровья]]></Name>
+					<X>600</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="occuresOnce">
+					<Properties TriggerType="timeout" Mode="cyclic">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</Timeout>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1777582710324</Id>
+						<Id>1779301220063</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1777622400000</OccurrenceDate>
+						<OccurrenceDate>1774339200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+							<Code><![CDATA[400]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
+					<Action><![CDATA[if (РаботаетЛиСистемаЗдравосохранения==true) 
+	{
+	for (int i=0; i<работники.size(); i++)
+		работники.get(i).здоровье -=0.05;
+	if (длительностьБолезни>5) длительностьБолезни +=1;
+	}]]></Action>
 				</Event>
 			</Events>
 			<Schedules>
 				<Schedule>
 					<Id>1777583104780</Id>
-					<Name><![CDATA[расисаниеПерерывов]]></Name>
+					<Name><![CDATA[расписаниеПерерывов]]></Name>
 					<X>260</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -1434,7 +1439,7 @@
 						<Parameter>
 							<Name><![CDATA[breaksSchedule]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[расисаниеПерерывов]]></Code>
+								<Code><![CDATA[расписаниеПерерывов]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
