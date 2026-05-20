@@ -3143,6 +3143,9 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 			</Variables>
@@ -3191,13 +3194,13 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<RealTimeScale>25.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Stop at specified date]]></StopOption>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775779200000]]></InitialDate>
 				<InitialTime><![CDATA[2.0]]></InitialTime>
-				<FinalDate><![CDATA[1902355200000]]></FinalDate>
-				<FinalTime><![CDATA[1467.0]]></FinalTime>
+				<FinalDate><![CDATA[1799107200000]]></FinalDate>
+				<FinalTime><![CDATA[272.0]]></FinalTime>
 			</ModelTimeProperties>
-			<BypassInitialScreen>false</BypassInitialScreen>
+			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
 	</Experiments>
 	<ModelResources>
