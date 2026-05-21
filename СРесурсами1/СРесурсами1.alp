@@ -1554,13 +1554,15 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.болеет = true;
 //traceln("работник заболел в ресурс пул время = " +time());
-]]></Code>
+
+send("заболей", unit);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRepair]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.болеет = false;
+send("выздоровей", unit);
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -2846,7 +2848,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Variable Class="PlainVariable">
 					<Id>1775594971820</Id>
 					<Name><![CDATA[больничНачало]]></Name>
-					<X>220</X><Y>280</Y>
+					<X>270</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2858,7 +2860,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Variable Class="PlainVariable">
 					<Id>1775594971822</Id>
 					<Name><![CDATA[больничКонец]]></Name>
-					<X>220</X><Y>300</Y>
+					<X>270</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2870,7 +2872,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Variable Class="PlainVariable">
 					<Id>1779301552716</Id>
 					<Name><![CDATA[когдаВзятНаРаботу]]></Name>
-					<X>210</X><Y>40</Y>
+					<X>50</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2882,7 +2884,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Variable Class="PlainVariable">
 					<Id>1779301673190</Id>
 					<Name><![CDATA[болеет]]></Name>
-					<X>210</X><Y>60</Y>
+					<X>270</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2999,7 +3001,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Point><X>140</X><Y>0</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1779301601734" Target="1779301637257" Trigger="condition">
+					<Properties Source="1779301601734" Target="1779301637257" Trigger="message">
 						<Action><![CDATA[traceln("работник заболел время в стрелке= " +time());]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -3010,10 +3012,10 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
+						<MessageType><![CDATA[String]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<FilterType><![CDATA[equalsTo]]></FilterType>
+						<EqualsExpression><![CDATA["заболей"]]></EqualsExpression>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
@@ -3030,20 +3032,20 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Point><X>-140</X><Y>10</Y></Point>
 					</Points>
 					<IconOffset>20.0</IconOffset>
-					<Properties Source="1779301637257" Target="1779301601734" Trigger="condition">
+					<Properties Source="1779301637257" Target="1779301601734" Trigger="message">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[(болеет == true)]]></Condition>
+						<Condition><![CDATA[(болеет == false)]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<MessageType><![CDATA[Object]]></MessageType>
+						<MessageType><![CDATA[String]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
-						<FilterType><![CDATA[unconditionally]]></FilterType>
-						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<FilterType><![CDATA[equalsTo]]></FilterType>
+						<EqualsExpression><![CDATA["заболей"]]></EqualsExpression>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
