@@ -664,7 +664,7 @@ for(int i=0; i < работники.size(); i++)
 					<Action><![CDATA[if (!РаботаетЛиСистемаЗдравосохранения) 
 	{
 	for (int i=0; i<работники.size(); i++)
-		работники.get(i).здоровье -=0.05;
+		работники.get(i).здоровье = Math.max(работники.get(i).здоровье - 0.05, 0.05);
 	if (длительностьБолезни>5) длительностьБолезни +=1;
 	}]]></Action>
 				</Event>
@@ -3694,8 +3694,8 @@ traceln("заболел внутри диаграммы во время = " +tim
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1814778600000]]></FinalDate>	
-				<FinalTime><![CDATA[450.0]]></FinalTime>	
+				<FinalDate><![CDATA[1905498600000]]></FinalDate>	
+				<FinalTime><![CDATA[1500.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
