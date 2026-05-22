@@ -1185,6 +1185,9 @@ for(int i=0; i < работники.size(); i++)
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocation]]></Name>
@@ -1347,9 +1350,6 @@ for(int i=0; i < работники.size(); i++)
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
 									<Parameters>
-										<Parameter>
-											<Name><![CDATA[зарплата]]></Name>
-										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -1510,6 +1510,9 @@ for(int i=0; i < работники.size(); i++)
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[breakTaskMayPreemptOtherTasks]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[breakTaskPreemptionPolicy]]></Name>
@@ -1693,6 +1696,9 @@ traceln((unit.больничКонец - unit.больничНачало) *
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocation]]></Name>
@@ -1780,6 +1786,9 @@ traceln((unit.больничКонец - unit.больничНачало) *
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("задание номер = " +agent.getId() +" number = " +agent.getIndex() + "задание выполнено, время=" + time());]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1875,6 +1884,9 @@ traceln((unit.больничКонец - unit.больничНачало) *
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[sendResources]]></Name>
@@ -1914,6 +1926,9 @@ traceln((unit.больничКонец - unit.больничНачало) *
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[taskPreemptionPolicy]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.PP_WAIT_FOR_ORIGINAL_RESOURCE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[terminatedTaskProcessing]]></Name>
@@ -1980,6 +1995,9 @@ traceln((unit.больничКонец - unit.больничНачало) *
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onSeizeUnit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("задание номер захвачено работником = " +agent.getId() +" number = " +agent.getIndex() + "задание захвачено, время=" + time());]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onPrepareUnit]]></Name>
@@ -2003,6 +2021,9 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onTaskSuspended]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[traceln("задание номер приостановлено работником = " +agent.getId() +" number = " +agent.getIndex() + "задание приостановлено, время=" + time());]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onTaskResumed]]></Name>
@@ -3436,13 +3457,13 @@ traceln("заболел внутри диаграммы во время = " +tim
 				<Title><![CDATA[СРесурсами : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>25.0</RealTimeScale>
+				<RealTimeScale>0.01</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
-				<InitialDate><![CDATA[1775952000000]]></InitialDate>	
+				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1814832000000]]></FinalDate>	
+				<FinalDate><![CDATA[1814778600000]]></FinalDate>	
 				<FinalTime><![CDATA[450.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
