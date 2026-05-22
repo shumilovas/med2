@@ -267,6 +267,30 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779395831506</Id>
+					<Name><![CDATA[коэффециэнтДляБольничных]]></Name>
+					<X>290</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.75]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779395831504</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -539,7 +563,11 @@
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[for(int i=0; i<работники.size(); i++)
-суммаЗарплат += работники.get(i).зарплата;]]></Action>
+	{
+	суммаЗарплат += работники.get(i).зарплата;
+	суммаБольничных += работники.get(i).суммаБольничных;
+	}
+]]></Action>
 				</Event>
 				<Event>
 					<Id>1779301220065</Id>
@@ -801,9 +829,6 @@
 						</GenericParameterSubstituteReference>
 					</GenericParameterSubstitute>
 					<Parameters>
-						<Parameter>
-							<Name><![CDATA[зарплата]]></Name>
-						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1563,6 +1588,13 @@ send("заболей", unit);]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.болеет = false;
 send("выздоровей", unit);
+unit.больничКонец = time();
+unit.суммаБольничных += (unit.больничКонец - unit.больничНачало) * 
+	unit.зарплата*коэффециэнтДляБольничных;
+traceln("место расчета больничного = " +time());
+traceln((unit.больничКонец - unit.больничНачало) * 
+	unit.зарплата*коэффециэнтДляБольничных);
+	
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -2896,30 +2928,35 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="Parameter">
-					<Id>1775594971829</Id>
+				<Variable Class="PlainVariable">
+					<Id>1779395740521</Id>
+					<Name><![CDATA[суммаБольничных]]></Name>
+					<X>270</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779397225586</Id>
 					<Name><![CDATA[зарплата]]></Name>
-					<Description><![CDATA[зарплата сотрудника в час в рублях]]></Description>
 					<X>50</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[700*продуктивность]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1775594971827</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[700 * продуктивность]]></Code>
+						</InitialValue>
+					</Properties>
 				</Variable>
 			</Variables>
 			<StatechartElements>
@@ -2944,7 +2981,11 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="70">
-						<EntryAction><![CDATA[traceln("работник заболел время в состоянии = " +time());]]></EntryAction>
+						<EntryAction><![CDATA[больничНачало = time();
+traceln("заболел внутри диаграммы во время = " +time());]]></EntryAction>
+						<ExitAction><![CDATA[больничКонец = time();
+
+]]></ExitAction>
 						<FillColor>-10496</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -3330,6 +3371,9 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Code><![CDATA[КоличествоРаботников]]></Code>
 					</ParameterValue>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[коэффециэнтДляБольничных]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -3343,8 +3387,8 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775779200000]]></InitialDate>	
 				<InitialTime><![CDATA[2.0]]></InitialTime>	
-				<FinalDate><![CDATA[1800662400000]]></FinalDate>	
-				<FinalTime><![CDATA[290.0]]></FinalTime>	
+				<FinalDate><![CDATA[1814486400000]]></FinalDate>	
+				<FinalTime><![CDATA[450.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
