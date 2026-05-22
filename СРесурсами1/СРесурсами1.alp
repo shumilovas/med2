@@ -528,14 +528,13 @@
 					<Action><![CDATA[for (int i = 0; i<работники.size() ; i++) 
 	{
 	работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
-	traceln("rabotnik = " +i);
 	работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
 	}
 ]]></Action>
 				</Event>
 				<Event>
 					<Id>1777580580674</Id>
-					<Name><![CDATA[суммаЗарплатСобытие]]></Name>
+					<Name><![CDATA[суммаЗарплатИБольничныхСобытие]]></Name>
 					<X>280</X><Y>480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -562,12 +561,13 @@
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[for(int i=0; i<работники.size(); i++)
-	{
-	суммаЗарплат += работники.get(i).зарплата;
-	суммаБольничных += работники.get(i).суммаБольничных;
-	}
-]]></Action>
+					<Action><![CDATA[суммаЗарплат = 0;
+суммаБольничных = 0;
+for(int i=0; i < работники.size(); i++)
+{
+    суммаЗарплат += работники.get(i).суммаЗарплат;
+    суммаБольничных += работники.get(i).суммаБольничных;
+}]]></Action>
 				</Event>
 				<Event>
 					<Id>1779301220065</Id>
@@ -713,6 +713,16 @@
 						<Interval>
 							<Start>410400000</Start>
 							<End>431940000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>432000000</Start>
+							<End>518340000</End>
+							<Value>true</Value>
+						</Interval>
+						<Interval>
+							<Start>518400000</Start>
+							<End>604740000</End>
 							<Value>true</Value>
 						</Interval>
 					</Intervals>
@@ -1578,7 +1588,6 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 							<Name><![CDATA[onFailure]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.болеет = true;
-//traceln("работник заболел в ресурс пул время = " +time());
 
 send("заболей", unit);]]></Code>
 							</Value>
@@ -1591,7 +1600,6 @@ send("выздоровей", unit);
 unit.больничКонец = time();
 unit.суммаБольничных += (unit.больничКонец - unit.больничНачало) * 
 	unit.зарплата*коэффециэнтДляБольничных;
-traceln("место расчета больничного = " +time());
 traceln((unit.больничКонец - unit.больничНачало) * 
 	unit.зарплата*коэффециэнтДляБольничных);
 	
@@ -1978,7 +1986,6 @@ traceln((unit.больничКонец - unit.больничНачало) *
 							<Value Class="CodeValue">
 								<Code><![CDATA[Работник работник = new Работник();
 работник = (Работник)unit;
-//traceln("проверка, есть ли в работнике числа " + работник.продуктивность);
 agent.назначенноеВремяДэлэйПоДанномуСотруднику = 2*agent.сложность/(работник.продуктивность*работник.здоровье);]]></Code>
 							</Value>
 						</Parameter>
@@ -2958,6 +2965,21 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779447160288</Id>
+					<Name><![CDATA[суммаЗарплат]]></Name>
+					<X>280</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -3043,7 +3065,6 @@ traceln("заболел внутри диаграммы во время = " +tim
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1779301601734" Target="1779301637257" Trigger="message">
-						<Action><![CDATA[traceln("работник заболел время в стрелке= " +time());]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
@@ -3152,6 +3173,40 @@ traceln("заболел внутри диаграммы во время = " +tim
 					</Properties>	
 				</StatechartElement>
 			</StatechartElements>
+			<Events>
+				<Event>
+					<Id>1779447176707</Id>
+					<Name><![CDATA[СуммированиеЗарплат]]></Name>
+					<X>280</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1779523200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[if (болеет == false && main.расписаниеПерерывов.getValue() == false)
+    суммаЗарплат += зарплата;]]></Action>
+				</Event>
+			</Events>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1775594971831</Id>
@@ -3385,9 +3440,9 @@ traceln("заболел внутри диаграммы во время = " +tim
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
-				<InitialDate><![CDATA[1775779200000]]></InitialDate>	
-				<InitialTime><![CDATA[2.0]]></InitialTime>	
-				<FinalDate><![CDATA[1814486400000]]></FinalDate>	
+				<InitialDate><![CDATA[1775952000000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1814832000000]]></FinalDate>	
 				<FinalTime><![CDATA[450.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
