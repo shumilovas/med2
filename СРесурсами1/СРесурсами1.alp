@@ -664,7 +664,7 @@ for(int i=0; i < работники.size(); i++)
 					<Action><![CDATA[if (!РаботаетЛиСистемаЗдравосохранения) 
 	{
 	for (int i=0; i<работники.size(); i++)
-		работники.get(i).здоровье -=0.05;
+		работники.get(i).здоровье = Math.max(работники.get(i).здоровье - 0.05, 0.05);
 	if (длительностьБолезни>5) длительностьБолезни +=1;
 	}]]></Action>
 				</Event>
@@ -1575,7 +1575,7 @@ for(int i=0; i < работники.size(); i++)
 						<Parameter>
 							<Name><![CDATA[initialTimeToFailure]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform( 0, 365*unit.здоровье)
+								<Code><![CDATA[Math.max(uniform(0, 365*unit.здоровье), 1)
 ]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
@@ -1583,7 +1583,7 @@ for(int i=0; i < работники.size(); i++)
 						<Parameter>
 							<Name><![CDATA[timeBetweenFailures]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangularAV( 365*unit.здоровье*0.95, 0.1*unit.здоровье )]]></Code>
+								<Code><![CDATA[Math.max(triangularAV(365*unit.здоровье*0.95, 0.1*unit.здоровье), 1)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
 						</Parameter>
@@ -1596,7 +1596,7 @@ for(int i=0; i < работники.size(); i++)
 						<Parameter>
 							<Name><![CDATA[repairTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[triangularAV( 2/unit.здоровье, 0.5/unit.здоровье )]]></Code>
+								<Code><![CDATA[Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01), 0.5/Math.max(unit.здоровье, 0.01)), 0.01)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 							</Value>
 						</Parameter>
