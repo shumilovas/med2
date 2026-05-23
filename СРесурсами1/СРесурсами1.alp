@@ -1709,20 +1709,18 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onFailure]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[unit.болеет = true;
-
-send("заболей", unit);]]></Code>
+								<Code><![CDATA[unit.больничНачало = time();
+send("заболей", unit);
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRepair]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[unit.болеет = false;
-send("выздоровел", unit);
+								<Code><![CDATA[send("выздоровел", unit);
 unit.больничКонец = time();
-unit.суммаБольничных += (unit.больничКонец - unit.больничНачало) * 
-	unit.зарплата*коэффециэнтДляБольничных;
-
+unit.суммаБольничных += (unit.больничКонец - unit.больничНачало) * 24 *
+    unit.зарплата * коэффециэнтДляБольничных;
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -3050,21 +3048,6 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1779301673190</Id>
-					<Name><![CDATA[болеет]]></Name>
-					<X>270</X><Y>90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[boolean]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1779395740521</Id>
 					<Name><![CDATA[суммаБольничных]]></Name>
 					<X>270</X><Y>170</Y>
@@ -3135,7 +3118,6 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<EntryAction><![CDATA[больничНачало = time();
 ]]></EntryAction>
 						<ExitAction><![CDATA[больничКонец = time();
-
 ]]></ExitAction>
 						<FillColor>-10496</FillColor>
 					</Properties>
@@ -3256,7 +3238,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1779301601734" Target="1779307282963" Trigger="timeout">
 						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[320]]></Code>
+							<Code><![CDATA[10000]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Condition><![CDATA[true]]></Condition>
@@ -3332,7 +3314,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (болеет == false && main.расписаниеПерерывов.getValue() == false)
+					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false)
     суммаЗарплат += зарплата;]]></Action>
 				</Event>
 			</Events>
@@ -3515,7 +3497,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[3]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3612,7 +3594,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<MaxValue><![CDATA[10000]]></MaxValue>
 						<Step><![CDATA[5]]></Step>
 						<LinkTo>true</LinkTo>
-						<Link>КоличествоРаботников</Link>
+						<Link>КоличествоРаботников1</Link>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="CheckBox">
@@ -3695,8 +3677,8 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[2035098600000]]></FinalDate>	
-				<FinalTime><![CDATA[3000.0]]></FinalTime>	
+				<FinalDate><![CDATA[2294298600000]]></FinalDate>	
+				<FinalTime><![CDATA[6000.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
