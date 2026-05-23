@@ -269,7 +269,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[700]]></Code>
+							<Code><![CDATA[500]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -358,7 +358,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[5000.0]]></Code>
+							<Code><![CDATA[45000.0]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1779479842465</Id>
@@ -603,12 +603,11 @@
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[for (int i = 0; i<работники.size() ; i++) 
-	{
-	работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
-	работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
-	}
-]]></Action>
+					<Action><![CDATA[for (int i = 0; i < работники.size(); i++) {
+    работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
+    работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
+    работники.get(i).когдаВзятНаРаботу = -uniform(0, 365);
+}]]></Action>
 				</Event>
 				<Event>
 					<Id>1777580580674</Id>
@@ -704,15 +703,16 @@ for(int i=0; i < работники.size(); i++)
 						<OccurrenceDate>1779523200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[10]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
+							<Code><![CDATA[1.5]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MONTH]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[double бюджетСБуфером = бюджетНаЗарплаты * 0.9;
+double максЗарплата = 7500;
 double общаяСуммаЗарплат = 0;
 double средняяЗарплата = 0;
 
@@ -720,35 +720,40 @@ for (int i = работники.size()-1; i >= 0; i--) {
     Работник р = работники.get(i);
     
     общаяСуммаЗарплат = 0;
-    for (Работник раб : работники) {
-        общаяСуммаЗарплат += раб.зарплата;
-    }
+    for (Работник раб : работники) общаяСуммаЗарплат += раб.зарплата;
     средняяЗарплата = общаяСуммаЗарплат / работники.size();
     
-    if ((time() - р.когдаВзятНаРаботу > 120) && 
-        (р.здоровье > 0.5) && 
-        (р.продуктивность > 0.7)) {
-        
-        double коэффициент = uniform(1.1, 1.4);
+    // Высокопродуктивные — уходят сами после 1.5 лет
+    if ((time() - р.когдаВзятНаРаботу > 545) && (р.продуктивность > 0.7)) {
+        double коэффициент = uniform(1.03, 1.12);
         double новаяЗарплата = р.зарплата * коэффициент;
         
-        if ((общаяСуммаЗарплат - р.зарплата + новаяЗарплата <= бюджетСБуфером) && 
-            (новаяЗарплата <= 5 * средняяЗарплата) && 
-            (новаяЗарплата >= 0.5 * средняяЗарплата)) {
-            
+        if ((общаяСуммаЗарплат - р.зарплата + новаяЗарплата <= бюджетСБуфером) &&
+            (новаяЗарплата <= максЗарплата)) {
             р.зарплата = новаяЗарплата;
-            
             общаяСуммаЗарплат = 0;
-            for (Работник раб : работники) {
-                общаяСуммаЗарплат += раб.зарплата;
-            }
+            for (Работник раб : работники) общаяСуммаЗарплат += раб.зарплата;
             средняяЗарплата = общаяСуммаЗарплат / работники.size();
-            
-        } else {
-            traceln("уволился");
+            traceln("  → ПОВЫШЕН до " + (int)новаяЗарплата);
+        } else if (новаяЗарплата > максЗарплата) {
+            traceln("  → УВОЛЕН (достиг потолка)");
             remove_работники(р);
             задержкаНайма.restartTo(time() + uniform(60, 90));
+        } else if (р.зарплата > 2700) {
+            traceln("  → УВОЛЕН (нет роста, ушёл к конкурентам)");
+            remove_работники(р);
+            задержкаНайма.restartTo(time() + uniform(60, 90));
+        } else {
+            traceln("  → не повышен, бюджет исчерпан");
         }
+    }
+    // Низкопродуктивные — увольняем принудительно, долго и редко
+    else if ((time() - р.когдаВзятНаРаботу > 730) && 
+             (р.продуктивность < 0.3) && 
+             (р.здоровье < 0.4)) {
+        traceln("  → УВОЛЕН (по статье)");
+        remove_работники(р);
+        задержкаНайма.restartTo(time() + uniform(90, 180));
     }
 }]]></Action>
 				</Event>
@@ -772,7 +777,7 @@ for (int i = работники.size()-1; i >= 0; i--) {
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779609600000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[uniform(time()+60, time() + 90)]]></Code>
+							<Code><![CDATA[9999999]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
@@ -3563,7 +3568,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[300]]></Code>
+							<Code><![CDATA[10]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3743,8 +3748,8 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[2294298600000]]></FinalDate>	
-				<FinalTime><![CDATA[6000.0]]></FinalTime>	
+				<FinalDate><![CDATA[1933578600000]]></FinalDate>	
+				<FinalTime><![CDATA[1825.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
