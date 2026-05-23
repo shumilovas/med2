@@ -259,21 +259,6 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1779538611528</Id>
-					<Name><![CDATA[базоваяЗарплата]]></Name>
-					<X>140</X><Y>220</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[700]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
 				<Variable Class="Parameter">
 					<Id>1775595135916</Id>
 					<Name><![CDATA[количествоРаботников]]></Name>
@@ -791,12 +776,21 @@ for (int i = работники.size()-1; i >= 0; i--) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[// Задержка в 2-3 месяца (60-90 дней)
-wait((int) uniform(60, 90));
-
-// Создаем нового сотрудника (AnyLogic сам создаст агента с заданными по умолчанию свойствами)
-работники.add_работники();
-
-traceln("Нанят новый сотрудник");]]></Body>
+    wait(uniform(60, 90));
+    
+    // Создаем нового сотрудника
+    Работник новыйРаботник = new Работник();
+    
+    // Инициализируем параметры
+    новыйРаботник.когдаВзятНаРаботу = time();
+    новыйРаботник.здоровье = uniform(0.8, 1.0); // начальное здоровье
+    новыйРаботник.продуктивность = uniform(0.7, 0.9); // начальная продуктивность
+    новыйРаботник.зарплата = базоваяЗарплата; // начальная зарплата
+    
+    // Добавляем в коллекцию
+    работники.add(новыйРаботник);
+    
+    traceln("Нанят новый сотрудник");]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
@@ -3107,7 +3101,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[uniform(0.8, 1.0)]]></Code>
+							<Code><![CDATA[1.0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3160,9 +3154,6 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[time()]]></Code>
-						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
@@ -3191,7 +3182,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[main.базоваяЗарплата * продуктивность]]></Code>
+							<Code><![CDATA[700 * продуктивность]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
