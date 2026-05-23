@@ -689,7 +689,7 @@ for(int i=0; i < работники.size(); i++)
 						<OccurrenceDate>1779523200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[MONTH]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -1596,7 +1596,10 @@ for(int i=0; i < работники.size(); i++)
 						<Parameter>
 							<Name><![CDATA[repairTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01), 0.5/Math.max(unit.здоровье, 0.01)), 0.01)]]></Code>
+								<Code><![CDATA[Math.min(
+    Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01), 0.5/Math.max(unit.здоровье, 0.01)), 0.01),
+    30.0/7.0
+)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 							</Value>
 						</Parameter>
@@ -1715,13 +1718,11 @@ send("заболей", unit);]]></Code>
 							<Name><![CDATA[onRepair]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.болеет = false;
-send("выздоровей", unit);
+send("выздоровел", unit);
 unit.больничКонец = time();
 unit.суммаБольничных += (unit.больничКонец - unit.больничНачало) * 
 	unit.зарплата*коэффециэнтДляБольничных;
-traceln((unit.больничКонец - unit.больничНачало) * 
-	unit.зарплата*коэффециэнтДляБольничных);
-	
+
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -3132,7 +3133,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="70">
 						<EntryAction><![CDATA[больничНачало = time();
-traceln("заболел внутри диаграммы во время = " +time());]]></EntryAction>
+]]></EntryAction>
 						<ExitAction><![CDATA[больничКонец = time();
 
 ]]></ExitAction>
@@ -3235,7 +3236,7 @@ traceln("заболел внутри диаграммы во время = " +tim
 						<MessageType><![CDATA[String]]></MessageType>
 						<DefaultTransition>true</DefaultTransition>
 						<FilterType><![CDATA[equalsTo]]></FilterType>
-						<EqualsExpression><![CDATA["заболей"]]></EqualsExpression>
+						<EqualsExpression><![CDATA["выздоровел"]]></EqualsExpression>
 						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
 					</Properties>	
 				</StatechartElement>
@@ -3514,7 +3515,7 @@ traceln("заболел внутри диаграммы во время = " +tim
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[1]]></Code>
+							<Code><![CDATA[10]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3544,7 +3545,7 @@ traceln("заболел внутри диаграммы во время = " +tim
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3688,14 +3689,14 @@ traceln("заболел внутри диаграммы во время = " +tim
 				<Title><![CDATA[СРесурсами : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
-				<RealTimeScale>0.01</RealTimeScale>
+				<RealTimeScale>500.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1905498600000]]></FinalDate>	
-				<FinalTime><![CDATA[1500.0]]></FinalTime>	
+				<FinalDate><![CDATA[2035098600000]]></FinalDate>	
+				<FinalTime><![CDATA[3000.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
