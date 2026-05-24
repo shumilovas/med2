@@ -3198,6 +3198,30 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779619391560</Id>
+					<Name><![CDATA[накопленнаяУсталость]]></Name>
+					<X>280</X><Y>310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779619440803</Id>
+					<Name><![CDATA[коэффициентПрезентеизма]]></Name>
+					<X>280</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -3393,7 +3417,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 			<Events>
 				<Event>
 					<Id>1779447176707</Id>
-					<Name><![CDATA[СуммированиеЗарплат]]></Name>
+					<Name><![CDATA[СуммированиеЗарплатИУсталости]]></Name>
 					<X>280</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -3420,8 +3444,15 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false)
-    суммаЗарплат += зарплата;]]></Action>
+					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false) {
+    суммаЗарплат += зарплата;
+    // базовое накопление (парадокс для трудоголиков остаётся)
+    накопленнаяУсталость += 0.003;
+    // дополнительное при низком здоровье
+    накопленнаяУсталость += Math.max(0, (1.0 - здоровье) * 0.003);
+} else {
+    накопленнаяУсталость = Math.max(накопленнаяУсталость - 0.0005, 0);
+}]]></Action>
 				</Event>
 			</Events>
 			<AgentLinks>
