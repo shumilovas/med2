@@ -148,6 +148,50 @@
 				<Name><![CDATA[Габен]]></Name>
 			</Option>
 		</OptionList>
+		<OptionList>
+			<Id>1779719898146</Id>
+			<Name><![CDATA[ПсихиатрическиеПсихотипы]]></Name>
+			<Option>
+				<Id>1779719898147</Id>
+				<Name><![CDATA[шизоид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898148</Id>
+				<Name><![CDATA[эпилептоид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898149</Id>
+				<Name><![CDATA[гипертим]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898150</Id>
+				<Name><![CDATA[истероид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898151</Id>
+				<Name><![CDATA[нормотим]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1779720509796</Id>
+			<Name><![CDATA[ТипЗадания]]></Name>
+			<Option>
+				<Id>1779720509797</Id>
+				<Name><![CDATA[аналитическое]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509798</Id>
+				<Name><![CDATA[регламентное]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509799</Id>
+				<Name><![CDATA[управленческое]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509800</Id>
+				<Name><![CDATA[творческое]]></Name>
+			</Option>
+		</OptionList>
 	</OptionLists>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
@@ -767,6 +811,12 @@
     else if (rand < 0.60) работники.get(i).психотип = 3;
     else if (rand < 0.75) работники.get(i).психотип = 4;
     else                  работники.get(i).психотип = 5;
+
+    if      (работники.get(i).психотип == 1) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.шизоид;
+    else if (работники.get(i).психотип == 2) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.эпилептоид;
+    else if (работники.get(i).психотип == 3) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.гипертим;
+    else if (работники.get(i).психотип == 4) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.истероид;
+    else                                      работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.нормотим;
 
     Работник рр = работники.get(i);
 
@@ -3120,6 +3170,21 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720578977</Id>
+					<Name><![CDATA[типЗадания]]></Name>
+					<X>50</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ТипЗадания]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[аналитическое]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1775594971682</Id>
 					<Name><![CDATA[сложность]]></Name>
@@ -3582,6 +3647,21 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Type><![CDATA[ТипСоционика]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[ДонКихот]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779719963130</Id>
+					<Name><![CDATA[психиатрическийПсихотип]]></Name>
+					<X>190</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ПсихиатрическиеПсихотипы]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[нормотим]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
