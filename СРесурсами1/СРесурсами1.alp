@@ -566,6 +566,102 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725069644</Id>
+					<Name><![CDATA[доляАналитических]]></Name>
+					<X>740</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725069642</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725092147</Id>
+					<Name><![CDATA[доляРегламентных]]></Name>
+					<X>740</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725092145</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725113763</Id>
+					<Name><![CDATA[доляУправленческих]]></Name>
+					<X>740</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725113761</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725131619</Id>
+					<Name><![CDATA[доляТворческих]]></Name>
+					<X>740</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725131617</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -1624,6 +1720,17 @@ traceln("Нанят новый сотрудник")]]></Action>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[double rv = uniform(0, 1);
+if (rv < доляАналитических)
+    agent.типЗадания = ТипЗадания.аналитическое;
+else if (rv < доляАналитических + доляРегламентных)
+    agent.типЗадания = ТипЗадания.регламентное;
+else if (rv < доляАналитических + доляРегламентных + доляУправленческих)
+    agent.типЗадания = ТипЗадания.управленческое;
+else
+    agent.типЗадания = ТипЗадания.творческое;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onDiscard]]></Name>
@@ -2506,9 +2613,28 @@ unit.суммаБольничных += (unit.больничКонец - unit.б�
 						<Parameter>
 							<Name><![CDATA[onPrepareUnit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Работник работник = new Работник();
-работник = (Работник)unit;
-agent.назначенноеВремяДэлэйПоДанномуСотруднику = 0.105*agent.сложность/(работник.продуктивность*работник.здоровье);]]></Code>
+								<Code><![CDATA[Работник работник = (Работник)unit;
+
+// базовое время выполнения
+agent.назначенноеВремяДэлэйПоДанномуСотруднику =
+    0.105 * agent.сложность / (работник.продуктивность * работник.здоровье);
+
+// совпадение психотипа с типом задания
+boolean совпадение =
+    (работник.психотип == 1 && agent.типЗадания == ТипЗадания.аналитическое) ||
+    (работник.психотип == 2 && agent.типЗадания == ТипЗадания.регламентное)  ||
+    (работник.психотип == 3 && agent.типЗадания == ТипЗадания.управленческое)||
+    (работник.психотип == 4 && agent.типЗадания == ТипЗадания.творческое);
+
+if (совпадение) {
+    agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 0.7; // быстрее
+    работник.накопленнаяУсталость -= 0.05; // усталость снижается
+    работник.накопленнаяУсталость = Math.max(работник.накопленнаяУсталость, 0);
+} else {
+    agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 1.3; // медленнее
+    работник.накопленнаяУсталость += 0.1; // усталость растёт
+}
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4074,7 +4200,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[3]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -4120,6 +4246,66 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[5000]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720824275</Id>
+					<Name><![CDATA[доляАналитических]]></Name>
+					<X>590</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720829573</Id>
+					<Name><![CDATA[доляРегламентных]]></Name>
+					<X>600</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720833397</Id>
+					<Name><![CDATA[доляУправленческих]]></Name>
+					<X>600</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720841961</Id>
+					<Name><![CDATA[доляТворческих]]></Name>
+					<X>610</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -4220,6 +4406,97 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Link>МаксБюджНаЗарплаты</Link>
 					</ExtendedProperties>
 				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720789464</Id>
+					<Name><![CDATA[slidдоляАналитических]]></Name>
+					<X>480</X><Y>110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляАналитических</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720806310</Id>
+					<Name><![CDATA[slidдоляРегламентных]]></Name>
+					<X>480</X><Y>170</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляРегламентных</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720810768</Id>
+					<Name><![CDATA[slidдоляУправленческих]]></Name>
+					<X>480</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляУправленческих</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720814353</Id>
+					<Name><![CDATA[slidдоляТворческих]]></Name>
+					<X>480</X><Y>270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 			<Parameters>			
@@ -4241,6 +4518,30 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Parameter>
 					<ParameterName><![CDATA[максБюджетНаЗарплаты]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляАналитических]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляАналитических]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляРегламентных]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляРегламентных]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляУправленческих]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляУправленческих]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляТворческих]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляТворческих]]></Code>
+					</ParameterValue>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -4254,8 +4555,8 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1933578600000]]></FinalDate>	
-				<FinalTime><![CDATA[1825.0]]></FinalTime>	
+				<FinalDate><![CDATA[1797498600000]]></FinalDate>	
+				<FinalTime><![CDATA[250.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
