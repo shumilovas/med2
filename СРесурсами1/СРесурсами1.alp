@@ -11,6 +11,144 @@
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[сресурсами]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
+	<OptionLists>
+		<OptionList>
+			<Id>1779715482141</Id>
+			<Name><![CDATA[ТипМБТИ]]></Name>
+			<Option>
+				<Id>1779715482142</Id>
+				<Name><![CDATA[INTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482143</Id>
+				<Name><![CDATA[INTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482144</Id>
+				<Name><![CDATA[INFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482145</Id>
+				<Name><![CDATA[INFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482146</Id>
+				<Name><![CDATA[ISTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482147</Id>
+				<Name><![CDATA[ISTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482148</Id>
+				<Name><![CDATA[ISFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482149</Id>
+				<Name><![CDATA[ISFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482150</Id>
+				<Name><![CDATA[ENTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482151</Id>
+				<Name><![CDATA[ENTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482152</Id>
+				<Name><![CDATA[ENFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482153</Id>
+				<Name><![CDATA[ENFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482154</Id>
+				<Name><![CDATA[ESTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482155</Id>
+				<Name><![CDATA[ESTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482156</Id>
+				<Name><![CDATA[ESFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482157</Id>
+				<Name><![CDATA[ESFP]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1779715699316</Id>
+			<Name><![CDATA[ТипСоционика]]></Name>
+			<Option>
+				<Id>1779715699317</Id>
+				<Name><![CDATA[ДонКихот]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699318</Id>
+				<Name><![CDATA[Дюма]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699319</Id>
+				<Name><![CDATA[Гюго]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699320</Id>
+				<Name><![CDATA[Робеспьер]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699321</Id>
+				<Name><![CDATA[Гамлет]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699322</Id>
+				<Name><![CDATA[Максим]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699323</Id>
+				<Name><![CDATA[Жуков]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699324</Id>
+				<Name><![CDATA[Есенин]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699325</Id>
+				<Name><![CDATA[Наполеон]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699326</Id>
+				<Name><![CDATA[Бальзак]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699327</Id>
+				<Name><![CDATA[Джек]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699328</Id>
+				<Name><![CDATA[Драйзер]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699329</Id>
+				<Name><![CDATA[Штирлиц]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699330</Id>
+				<Name><![CDATA[Достоевский]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699331</Id>
+				<Name><![CDATA[Гексли]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699332</Id>
+				<Name><![CDATA[Габен]]></Name>
+			</Option>
+		</OptionList>
+	</OptionLists>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -1039,6 +1177,12 @@ traceln("Нанят новый сотрудник")]]></Action>
 						</GenericParameterSubstituteReference>
 					</GenericParameterSubstitute>
 					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mbti]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[соционика]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -3221,6 +3365,126 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715023836</Id>
+					<Name><![CDATA[экстраверсия]]></Name>
+					<X>50</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715042315</Id>
+					<Name><![CDATA[интуиция]]></Name>
+					<X>50</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715055114</Id>
+					<Name><![CDATA[логика]]></Name>
+					<X>50</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715066066</Id>
+					<Name><![CDATA[рациональность]]></Name>
+					<X>50</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715099145</Id>
+					<Name><![CDATA[доминантность]]></Name>
+					<X>50</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715121777</Id>
+					<Name><![CDATA[психотип]]></Name>
+					<X>190</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779715842402</Id>
+					<Name><![CDATA[mbti]]></Name>
+					<X>300</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[ТипМБТИ]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[ENTJ]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779715842400</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779715915445</Id>
+					<Name><![CDATA[соционика]]></Name>
+					<X>300</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[ТипСоционика]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[ДонКихот]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779715915443</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
 				</Variable>
 			</Variables>
 			<StatechartElements>
