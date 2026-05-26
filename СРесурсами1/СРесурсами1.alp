@@ -1148,8 +1148,7 @@ for (int i = работники.size()-1; i >= 0; i--) {
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[add_работники();
-traceln("Нанят новый сотрудник")]]></Action>
+					<Action><![CDATA[add_работники();]]></Action>
 				</Event>
 			</Events>
 			<Schedules>
@@ -4494,8 +4493,8 @@ if (совпадение) {
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1797498600000]]></FinalDate>	
-				<FinalTime><![CDATA[250.0]]></FinalTime>	
+				<FinalDate><![CDATA[1933578600000]]></FinalDate>	
+				<FinalTime><![CDATA[1825.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
