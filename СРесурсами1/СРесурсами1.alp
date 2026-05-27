@@ -4493,8 +4493,8 @@ if (совпадение) {
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1933578600000]]></FinalDate>	
-				<FinalTime><![CDATA[1825.0]]></FinalTime>	
+				<FinalDate><![CDATA[1797498600000]]></FinalDate>	
+				<FinalTime><![CDATA[250.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	

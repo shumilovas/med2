@@ -11,6 +11,188 @@
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[сресурсами]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
+	<OptionLists>
+		<OptionList>
+			<Id>1779715482141</Id>
+			<Name><![CDATA[ТипМБТИ]]></Name>
+			<Option>
+				<Id>1779715482142</Id>
+				<Name><![CDATA[INTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482143</Id>
+				<Name><![CDATA[INTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482144</Id>
+				<Name><![CDATA[INFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482145</Id>
+				<Name><![CDATA[INFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482146</Id>
+				<Name><![CDATA[ISTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482147</Id>
+				<Name><![CDATA[ISTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482148</Id>
+				<Name><![CDATA[ISFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482149</Id>
+				<Name><![CDATA[ISFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482150</Id>
+				<Name><![CDATA[ENTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482151</Id>
+				<Name><![CDATA[ENTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482152</Id>
+				<Name><![CDATA[ENFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482153</Id>
+				<Name><![CDATA[ENFP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482154</Id>
+				<Name><![CDATA[ESTJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482155</Id>
+				<Name><![CDATA[ESTP]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482156</Id>
+				<Name><![CDATA[ESFJ]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715482157</Id>
+				<Name><![CDATA[ESFP]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1779715699316</Id>
+			<Name><![CDATA[ТипСоционика]]></Name>
+			<Option>
+				<Id>1779715699317</Id>
+				<Name><![CDATA[ДонКихот]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699318</Id>
+				<Name><![CDATA[Дюма]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699319</Id>
+				<Name><![CDATA[Гюго]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699320</Id>
+				<Name><![CDATA[Робеспьер]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699321</Id>
+				<Name><![CDATA[Гамлет]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699322</Id>
+				<Name><![CDATA[Максим]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699323</Id>
+				<Name><![CDATA[Жуков]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699324</Id>
+				<Name><![CDATA[Есенин]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699325</Id>
+				<Name><![CDATA[Наполеон]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699326</Id>
+				<Name><![CDATA[Бальзак]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699327</Id>
+				<Name><![CDATA[Джек]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699328</Id>
+				<Name><![CDATA[Драйзер]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699329</Id>
+				<Name><![CDATA[Штирлиц]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699330</Id>
+				<Name><![CDATA[Достоевский]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699331</Id>
+				<Name><![CDATA[Гексли]]></Name>
+			</Option>
+			<Option>
+				<Id>1779715699332</Id>
+				<Name><![CDATA[Габен]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1779719898146</Id>
+			<Name><![CDATA[ПсихиатрическиеПсихотипы]]></Name>
+			<Option>
+				<Id>1779719898147</Id>
+				<Name><![CDATA[шизоид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898148</Id>
+				<Name><![CDATA[эпилептоид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898149</Id>
+				<Name><![CDATA[гипертим]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898150</Id>
+				<Name><![CDATA[истероид]]></Name>
+			</Option>
+			<Option>
+				<Id>1779719898151</Id>
+				<Name><![CDATA[нормотим]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1779720509796</Id>
+			<Name><![CDATA[ТипЗадания]]></Name>
+			<Option>
+				<Id>1779720509797</Id>
+				<Name><![CDATA[аналитическое]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509798</Id>
+				<Name><![CDATA[регламентное]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509799</Id>
+				<Name><![CDATA[управленческое]]></Name>
+			</Option>
+			<Option>
+				<Id>1779720509800</Id>
+				<Name><![CDATA[творческое]]></Name>
+			</Option>
+		</OptionList>
+	</OptionLists>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -384,6 +566,102 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725069644</Id>
+					<Name><![CDATA[доляАналитических]]></Name>
+					<X>740</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725069642</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725092147</Id>
+					<Name><![CDATA[доляРегламентных]]></Name>
+					<X>740</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725092145</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725113763</Id>
+					<Name><![CDATA[доляУправленческих]]></Name>
+					<X>740</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725113761</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1779725131619</Id>
+					<Name><![CDATA[доляТворческих]]></Name>
+					<X>740</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1779725131617</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -591,7 +869,7 @@
 				</Event>
 				<Event>
 					<Id>1776342362641</Id>
-					<Name><![CDATA[НазначаемИзначальноеЗдоровье]]></Name>
+					<Name><![CDATA[НазначаемИзначальноеЗдоровьеИПсихотипы]]></Name>
 					<X>660</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -622,6 +900,75 @@
     работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
     работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
     работники.get(i).когдаВзятНаРаботу = -uniform(0, 365);
+
+    double rand = uniform(0, 1);
+    if      (rand < 0.20) работники.get(i).психотип = 1;
+    else if (rand < 0.40) работники.get(i).психотип = 2;
+    else if (rand < 0.60) работники.get(i).психотип = 3;
+    else if (rand < 0.75) работники.get(i).психотип = 4;
+    else                  работники.get(i).психотип = 5;
+
+    if      (работники.get(i).психотип == 1) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.шизоид;
+    else if (работники.get(i).психотип == 2) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.эпилептоид;
+    else if (работники.get(i).психотип == 3) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.гипертим;
+    else if (работники.get(i).психотип == 4) работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.истероид;
+    else                                      работники.get(i).психиатрическийПсихотип = ПсихиатрическиеПсихотипы.нормотим;
+
+    Работник рр = работники.get(i);
+
+    if      (рр.психотип == 1) {
+        рр.экстраверсия   = triangular(0.0,  0.45, 0.2);
+        рр.интуиция       = triangular(0.55, 1.0,  0.8);
+        рр.логика         = triangular(0.5,  1.0,  0.75);
+        рр.рациональность = triangular(0.2,  0.7,  0.45);
+        рр.доминантность  = triangular(0.0,  0.4,  0.15);
+    } else if (рр.психотип == 2) {
+        рр.экстраверсия   = triangular(0.3,  0.7,  0.5);
+        рр.интуиция       = triangular(0.0,  0.45, 0.2);
+        рр.логика         = triangular(0.6,  1.0,  0.8);
+        рр.рациональность = triangular(0.65, 1.0,  0.85);
+        рр.доминантность  = triangular(0.3,  0.75, 0.55);
+    } else if (рр.психотип == 3) {
+        рр.экстраверсия   = triangular(0.65, 1.0,  0.85);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.3,  0.7,  0.5);
+        рр.рациональность = triangular(0.1,  0.55, 0.3);
+        рр.доминантность  = triangular(0.5,  1.0,  0.75);
+    } else if (рр.психотип == 4) {
+        рр.экстраверсия   = triangular(0.6,  1.0,  0.8);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.0,  0.45, 0.2);
+        рр.рациональность = triangular(0.1,  0.6,  0.35);
+        рр.доминантность  = triangular(0.2,  0.65, 0.4);
+    } else {
+        рр.экстраверсия   = triangular(0.3,  0.7,  0.5);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.3,  0.7,  0.5);
+        рр.рациональность = triangular(0.3,  0.7,  0.5);
+        рр.доминантность  = triangular(0.2,  0.6,  0.4);
+    }
+
+    boolean e = рр.экстраверсия   > 0.5;
+    boolean n = рр.интуиция       > 0.5;
+    boolean t = рр.логика         > 0.5;
+    boolean j = рр.рациональность > 0.5;
+
+    if      ( e &&  n &&  t &&  j) { рр.mbti = ТипМБТИ.ENTJ; рр.соционика = ТипСоционика.Джек; }
+    else if ( e &&  n &&  t && !j) { рр.mbti = ТипМБТИ.ENTP; рр.соционика = ТипСоционика.ДонКихот; }
+    else if ( e &&  n && !t &&  j) { рр.mbti = ТипМБТИ.ENFJ; рр.соционика = ТипСоционика.Гамлет; }
+    else if ( e &&  n && !t && !j) { рр.mbti = ТипМБТИ.ENFP; рр.соционика = ТипСоционика.Гексли; }
+    else if ( e && !n &&  t &&  j) { рр.mbti = ТипМБТИ.ESTJ; рр.соционика = ТипСоционика.Жуков; }
+    else if ( e && !n &&  t && !j) { рр.mbti = ТипМБТИ.ESTP; рр.соционика = ТипСоционика.Штирлиц; }
+    else if ( e && !n && !t &&  j) { рр.mbti = ТипМБТИ.ESFJ; рр.соционика = ТипСоционика.Гюго; }
+    else if ( e && !n && !t && !j) { рр.mbti = ТипМБТИ.ESFP; рр.соционика = ТипСоционика.Наполеон; }
+    else if (!e &&  n &&  t &&  j) { рр.mbti = ТипМБТИ.INTJ; рр.соционика = ТипСоционика.Робеспьер; }
+    else if (!e &&  n &&  t && !j) { рр.mbti = ТипМБТИ.INTP; рр.соционика = ТипСоционика.Бальзак; }
+    else if (!e &&  n && !t &&  j) { рр.mbti = ТипМБТИ.INFJ; рр.соционика = ТипСоционика.Достоевский; }
+    else if (!e &&  n && !t && !j) { рр.mbti = ТипМБТИ.INFP; рр.соционика = ТипСоционика.Есенин; }
+    else if (!e && !n &&  t &&  j) { рр.mbti = ТипМБТИ.ISTJ; рр.соционика = ТипСоционика.Максим; }
+    else if (!e && !n &&  t && !j) { рр.mbti = ТипМБТИ.ISTP; рр.соционика = ТипСоционика.Габен; }
+    else if (!e && !n && !t &&  j) { рр.mbti = ТипМБТИ.ISFJ; рр.соционика = ТипСоционика.Драйзер; }
+    else                            { рр.mbti = ТипМБТИ.ISFP; рр.соционика = ТипСоционика.Дюма; }
 }]]></Action>
 				</Event>
 				<Event>
@@ -653,14 +1000,74 @@
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[суммаЗарплат = 0;
-суммаБольничных = 0;
-for(int i=0; i < работники.size(); i++)
-{
-    суммаЗарплат += работники.get(i).суммаЗарплат;
-    суммаБольничных += работники.get(i).суммаБольничных;
-}
-бюджетНаЗарплаты = суммаВыручки * 0.001;]]></Action>
+					<Action><![CDATA[for (int i = 0; i < работники.size(); i++) {
+    работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
+    работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
+    работники.get(i).когдаВзятНаРаботу = -uniform(0, 365);
+
+    double rand = uniform(0, 1);
+    if      (rand < 0.20) работники.get(i).психотип = 1;
+    else if (rand < 0.40) работники.get(i).психотип = 2;
+    else if (rand < 0.60) работники.get(i).психотип = 3;
+    else if (rand < 0.75) работники.get(i).психотип = 4;
+    else                  работники.get(i).психотип = 5;
+
+    Работник рр = работники.get(i);
+
+    if      (рр.психотип == 1) {
+        рр.экстраверсия   = triangular(0.0,  0.45, 0.2);
+        рр.интуиция       = triangular(0.55, 1.0,  0.8);
+        рр.логика         = triangular(0.5,  1.0,  0.75);
+        рр.рациональность = triangular(0.2,  0.7,  0.45);
+        рр.доминантность  = triangular(0.0,  0.4,  0.15);
+    } else if (рр.психотип == 2) {
+        рр.экстраверсия   = triangular(0.3,  0.7,  0.5);
+        рр.интуиция       = triangular(0.0,  0.45, 0.2);
+        рр.логика         = triangular(0.6,  1.0,  0.8);
+        рр.рациональность = triangular(0.65, 1.0,  0.85);
+        рр.доминантность  = triangular(0.3,  0.75, 0.55);
+    } else if (рр.психотип == 3) {
+        рр.экстраверсия   = triangular(0.65, 1.0,  0.85);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.3,  0.7,  0.5);
+        рр.рациональность = triangular(0.1,  0.55, 0.3);
+        рр.доминантность  = triangular(0.5,  1.0,  0.75);
+    } else if (рр.психотип == 4) {
+        рр.экстраверсия   = triangular(0.6,  1.0,  0.8);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.0,  0.45, 0.2);
+        рр.рациональность = triangular(0.1,  0.6,  0.35);
+        рр.доминантность  = triangular(0.2,  0.65, 0.4);
+    } else {
+        рр.экстраверсия   = triangular(0.3,  0.7,  0.5);
+        рр.интуиция       = triangular(0.3,  0.7,  0.5);
+        рр.логика         = triangular(0.3,  0.7,  0.5);
+        рр.рациональность = triangular(0.3,  0.7,  0.5);
+        рр.доминантность  = triangular(0.2,  0.6,  0.4);
+    }
+
+    boolean e = рр.экстраверсия   > 0.5;
+    boolean n = рр.интуиция       > 0.5;
+    boolean t = рр.логика         > 0.5;
+    boolean j = рр.рациональность > 0.5;
+
+    if      ( e &&  n &&  t &&  j) { рр.mbti = ТипМБТИ.ENTJ; рр.соционика = ТипСоционика.Джек; }
+    else if ( e &&  n &&  t && !j) { рр.mbti = ТипМБТИ.ENTP; рр.соционика = ТипСоционика.ДонКихот; }
+    else if ( e &&  n && !t &&  j) { рр.mbti = ТипМБТИ.ENFJ; рр.соционика = ТипСоционика.Гамлет; }
+    else if ( e &&  n && !t && !j) { рр.mbti = ТипМБТИ.ENFP; рр.соционика = ТипСоционика.Гексли; }
+    else if ( e && !n &&  t &&  j) { рр.mbti = ТипМБТИ.ESTJ; рр.соционика = ТипСоционика.Жуков; }
+    else if ( e && !n &&  t && !j) { рр.mbti = ТипМБТИ.ESTP; рр.соционика = ТипСоционика.Штирлиц; }
+    else if ( e && !n && !t &&  j) { рр.mbti = ТипМБТИ.ESFJ; рр.соционика = ТипСоционика.Гюго; }
+    else if ( e && !n && !t && !j) { рр.mbti = ТипМБТИ.ESFP; рр.соционика = ТипСоционика.Наполеон; }
+    else if (!e &&  n &&  t &&  j) { рр.mbti = ТипМБТИ.INTJ; рр.соционика = ТипСоционика.Робеспьер; }
+    else if (!e &&  n &&  t && !j) { рр.mbti = ТипМБТИ.INTP; рр.соционика = ТипСоционика.Бальзак; }
+    else if (!e &&  n && !t &&  j) { рр.mbti = ТипМБТИ.INFJ; рр.соционика = ТипСоционика.Достоевский; }
+    else if (!e &&  n && !t && !j) { рр.mbti = ТипМБТИ.INFP; рр.соционика = ТипСоционика.Есенин; }
+    else if (!e && !n &&  t &&  j) { рр.mbti = ТипМБТИ.ISTJ; рр.соционика = ТипСоционика.Максим; }
+    else if (!e && !n &&  t && !j) { рр.mbti = ТипМБТИ.ISTP; рр.соционика = ТипСоционика.Габен; }
+    else if (!e && !n && !t &&  j) { рр.mbti = ТипМБТИ.ISFJ; рр.соционика = ТипСоционика.Драйзер; }
+    else                            { рр.mbti = ТипМБТИ.ISFP; рр.соционика = ТипСоционика.Дюма; }
+}]]></Action>
 				</Event>
 				<Event>
 					<Id>1779301220065</Id>
@@ -1313,6 +1720,17 @@ traceln("Нанят новый сотрудник")]]></Action>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[double rv = uniform(0, 1);
+if (rv < доляАналитических)
+    agent.типЗадания = ТипЗадания.аналитическое;
+else if (rv < доляАналитических + доляРегламентных)
+    agent.типЗадания = ТипЗадания.регламентное;
+else if (rv < доляАналитических + доляРегламентных + доляУправленческих)
+    agent.типЗадания = ТипЗадания.управленческое;
+else
+    agent.типЗадания = ТипЗадания.творческое;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onDiscard]]></Name>
@@ -2195,9 +2613,28 @@ unit.суммаБольничных += (unit.больничКонец - unit.б�
 						<Parameter>
 							<Name><![CDATA[onPrepareUnit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Работник работник = new Работник();
-работник = (Работник)unit;
-agent.назначенноеВремяДэлэйПоДанномуСотруднику = 0.105*agent.сложность/(работник.продуктивность*работник.здоровье);]]></Code>
+								<Code><![CDATA[Работник работник = (Работник)unit;
+
+// базовое время выполнения
+agent.назначенноеВремяДэлэйПоДанномуСотруднику =
+    0.105 * agent.сложность / (работник.продуктивность * работник.здоровье);
+
+// совпадение психотипа с типом задания
+boolean совпадение =
+    (работник.психотип == 1 && agent.типЗадания == ТипЗадания.аналитическое) ||
+    (работник.психотип == 2 && agent.типЗадания == ТипЗадания.регламентное)  ||
+    (работник.психотип == 3 && agent.типЗадания == ТипЗадания.управленческое)||
+    (работник.психотип == 4 && agent.типЗадания == ТипЗадания.творческое);
+
+if (совпадение) {
+    agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 0.7; // быстрее
+    работник.накопленнаяУсталость -= 0.05; // усталость снижается
+    работник.накопленнаяУсталость = Math.max(работник.накопленнаяУсталость, 0);
+} else {
+    agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 1.3; // медленнее
+    работник.накопленнаяУсталость += 0.1; // усталость растёт
+}
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2859,6 +3296,21 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720578977</Id>
+					<Name><![CDATA[типЗадания]]></Name>
+					<X>50</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ТипЗадания]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[аналитическое]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1775594971682</Id>
 					<Name><![CDATA[сложность]]></Name>
@@ -3198,6 +3650,147 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779619391560</Id>
+					<Name><![CDATA[накопленнаяУсталость]]></Name>
+					<X>280</X><Y>310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779619440803</Id>
+					<Name><![CDATA[коэффициентПрезентеизма]]></Name>
+					<X>280</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715023836</Id>
+					<Name><![CDATA[экстраверсия]]></Name>
+					<X>50</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715042315</Id>
+					<Name><![CDATA[интуиция]]></Name>
+					<X>50</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715055114</Id>
+					<Name><![CDATA[логика]]></Name>
+					<X>50</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715066066</Id>
+					<Name><![CDATA[рациональность]]></Name>
+					<X>50</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715099145</Id>
+					<Name><![CDATA[доминантность]]></Name>
+					<X>50</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779715121777</Id>
+					<Name><![CDATA[психотип]]></Name>
+					<X>190</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779716153188</Id>
+					<Name><![CDATA[mbti]]></Name>
+					<X>340</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ТипМБТИ]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[ENTJ]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779716195188</Id>
+					<Name><![CDATA[соционика]]></Name>
+					<X>340</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ТипСоционика]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[ДонКихот]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779719963130</Id>
+					<Name><![CDATA[психиатрическийПсихотип]]></Name>
+					<X>190</X><Y>470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ПсихиатрическиеПсихотипы]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[нормотим]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -3393,7 +3986,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 			<Events>
 				<Event>
 					<Id>1779447176707</Id>
-					<Name><![CDATA[СуммированиеЗарплат]]></Name>
+					<Name><![CDATA[СуммированиеЗарплатИУсталости]]></Name>
 					<X>280</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -3420,8 +4013,12 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false)
-    суммаЗарплат += зарплата;]]></Action>
+					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false) {
+    суммаЗарплат += зарплата;
+    накопленнаяУсталость += 0.003;
+} else {
+    накопленнаяУсталость = Math.max(накопленнаяУсталость - 0.0005, 0);
+}]]></Action>
 				</Event>
 			</Events>
 			<AgentLinks>
@@ -3603,7 +4200,7 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[3]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3649,6 +4246,66 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[5000]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720824275</Id>
+					<Name><![CDATA[доляАналитических]]></Name>
+					<X>590</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720829573</Id>
+					<Name><![CDATA[доляРегламентных]]></Name>
+					<X>600</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720833397</Id>
+					<Name><![CDATA[доляУправленческих]]></Name>
+					<X>600</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779720841961</Id>
+					<Name><![CDATA[доляТворческих]]></Name>
+					<X>610</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3749,6 +4406,97 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 						<Link>МаксБюджНаЗарплаты</Link>
 					</ExtendedProperties>
 				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720789464</Id>
+					<Name><![CDATA[slidдоляАналитических]]></Name>
+					<X>480</X><Y>110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляАналитических</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720806310</Id>
+					<Name><![CDATA[slidдоляРегламентных]]></Name>
+					<X>480</X><Y>170</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляРегламентных</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720810768</Id>
+					<Name><![CDATA[slidдоляУправленческих]]></Name>
+					<X>480</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>доляУправленческих</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1779720814353</Id>
+					<Name><![CDATA[slidдоляТворческих]]></Name>
+					<X>480</X><Y>270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[100]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 			<Parameters>			
@@ -3770,6 +4518,30 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<Parameter>
 					<ParameterName><![CDATA[максБюджетНаЗарплаты]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляАналитических]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляАналитических]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляРегламентных]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляРегламентных]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляУправленческих]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляУправленческих]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[доляТворческих]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[доляТворческих]]></Code>
+					</ParameterValue>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -3783,8 +4555,8 @@ agent.назначенноеВремяДэлэйПоДанномуСотрудн
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1933578600000]]></FinalDate>	
-				<FinalTime><![CDATA[1825.0]]></FinalTime>	
+				<FinalDate><![CDATA[1797498600000]]></FinalDate>	
+				<FinalTime><![CDATA[250.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
