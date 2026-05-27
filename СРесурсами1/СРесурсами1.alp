@@ -4172,6 +4172,46 @@ if (совпадение) {
     накопленнаяУсталость = Math.max(накопленнаяУсталость - 0.0005, 0);
 }]]></Action>
 				</Event>
+				<Event>
+					<Id>1779900568623</Id>
+					<Name><![CDATA[расчетПремииЗаФизАкт]]></Name>
+					<X>490</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<Id>1779900568621</Id>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1779955200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MONTH]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MONTH]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[if (участвуетВПрограмме && уровеньАктивности > 0) {
+        double годоваяПремия = main.базовыйРазмерГодовойПремииЗаФизическуюАктивность;
+        double периодВыплат = main.периодичностьВыплатПремииЗаФизАктивность;
+        премияЗаАктивность = годоваяПремия / периодВыплат;
+       
+    } else {
+        премияЗаАктивность = 0;
+      
+    }]]></Action>
+				</Event>
 			</Events>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -4184,20 +4224,16 @@ if (совпадение) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (!участвуетВПрограмме || уровеньАктивности == 0) {
-            return 0;
-        }
-        
-        double годоваяПремия =main.базовыйРазмерГодовойПремииЗаФизическуюАктивность;
+					<Body><![CDATA[if (участвуетВПрограмме && уровеньАктивности > 0) {
+        traceln("in premi");
+        double годоваяПремия = main.базовыйРазмерГодовойПремииЗаФизическуюАктивность;
         double периодВыплат = main.периодичностьВыплатПремииЗаФизАктивность;
-        double месячнаяПремия = годоваяПремия / периодВыплат;
-        
-        // Можно добавить модификаторы расчета
-        // Например, учитывать уровень активности
-        return месячнаяПремия * (1 + уровеньАктивности / 100);
-    
-    
-    ]]></Body>
+        премияЗаАктивность = годоваяПремия / периодВыплат;
+        return годоваяПремия / периодВыплат;
+    } else {
+        премияЗаАктивность = 0;
+        return 0;
+    }]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
