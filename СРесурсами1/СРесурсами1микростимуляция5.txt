@@ -3942,21 +3942,6 @@ if (совпадение) {
 						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1779903974409</Id>
-					<Name><![CDATA[коэффициентУтомления]]></Name>
-					<X>50</X><Y>290</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[1]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -4182,7 +4167,7 @@ if (совпадение) {
 					</Properties>
 					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false && накопленнаяУсталость < 101) {
     суммаЗарплат += зарплата;
-    накопленнаяУсталость += 0.003*коэффициентУтомления;
+    накопленнаяУсталость += 0.003;
     
     накопленнаяУсталость = Math.max(накопленнаяУсталость - 0.0005, 0);
 }
@@ -4264,52 +4249,6 @@ if (совпадение) {
 	           здоровье * 
 	           (1 - ((суммаЗарплат-суммаБольничных) / суммаЗарплат));
 	           }]]></Action>
-				</Event>
-				<Event>
-					<Id>1779903991614</Id>
-					<Name><![CDATA[обновитьСостояние]]></Name>
-					<X>60</X><Y>340</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
-						</Timeout>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
-						</Rate>
-						<Id>1779903991612</Id>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1779955200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[19]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[10]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
-						</RecurrenceCode>
-						<Condition><![CDATA[false]]></Condition>
-					</Properties>
-					<Action><![CDATA[// Влияние здоровья на накопление усталости
-        if (здоровье > 85) {
-            коэффициентУтомления = 0.95;
-        } else if (здоровье < 70) {
-            коэффициентУтомления = 1.03;
-        } else {
-            коэффициентУтомления = 1.0;
-        }
-        
-        // Влияние усталости на здоровье
-        if (накопленнаяУсталость > 20) {
-            здоровье -= 0.5;
-        } else if (накопленнаяУсталость > 15) {
-            здоровье -= 0.2;
-        }]]></Action>
 				</Event>
 			</Events>
 			<Functions>
