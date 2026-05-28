@@ -2165,13 +2165,9 @@ else
 						<Parameter>
 							<Name><![CDATA[timeBetweenFailures]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[randomTrue(((Работник)unit).absenteeismProbability)
-    ? (((Работник)unit).текущийПростойАбсентеизм = true) == true
-        ? uniform(30, 90)
-        : 1
-    : (((Работник)unit).текущийПростойАбсентеизм = false) == false
-        ? Math.max(triangularAV(365 * Math.max(unit.здоровье, 0.05) * 0.95, 0.1 * Math.max(unit.здоровье, 0.05)), 1)
-        : 1]]></Code>
+								<Code><![CDATA[((Работник)unit).текущийПростойАбсентеизм
+    ? uniform(30, 90)
+    : Math.max(triangularAV(365 * Math.max(unit.здоровье, 0.05) * 0.95, 0.1 * Math.max(unit.здоровье, 0.05)), 1)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
 						</Parameter>
@@ -2301,11 +2297,15 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 							<Name><![CDATA[onFailure]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[Работник р = (Работник)unit;
+// Флаг уже установлен в onRepair предыдущего цикла
+traceln("[ПОЛОМКА] t=" + time() + " абсентеизм=" + р.текущийПростойАбсентеизм
+    + " вероятность=" + р.absenteeismProbability
+    + " здоровье=" + р.здоровье);
 if (!р.текущийПростойАбсентеизм) {
     р.больничНачало = time();
     send("заболей", р);
 } else {
-    traceln("[АБСЕНТЕИЗМ] t=" + time() + " работник здоровье=" + р.здоровье
+    traceln("[АБСЕНТЕИЗМ] t=" + time() + " здоровье=" + р.здоровье
         + " усталость=" + р.накопленнаяУсталость
         + " продуктивность=" + р.продуктивность);
 }
@@ -2322,11 +2322,11 @@ if (!р.текущийПростойАбсентеизм) {
     р.суммаБольничных += (р.больничКонец - р.больничНачало) * 24 *
         р.зарплата * коэффециэнтДляБольничных;
 } else {
-    // абсентеизм: работник возвращается без больничного
     traceln("[АБСЕНТЕИЗМ] КОНЕЦ t=" + time() + " работник здоровье=" + р.здоровье
         + " усталость=" + р.накопленнаяУсталость);
-    р.текущийПростойАбсентеизм = false;
 }
+// Устанавливаем тип СЛЕДУЮЩЕГО простоя — здесь, чтобы repairTime его прочитал
+р.текущийПростойАбсентеизм = р.absenteeismProbability > uniform(0, 1);
 ]]></Code>
 							</Value>
 						</Parameter>
@@ -4100,7 +4100,7 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[(болеет == true)]]></Condition>
+						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
@@ -4130,7 +4130,7 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[(болеет == false)]]></Condition>
+						<Condition><![CDATA[true]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
