@@ -2179,7 +2179,8 @@ else
 							<Name><![CDATA[repairTime]]></Name>
 							<Value Class="CodeUnitValue">
 								<Code><![CDATA[Math.min(
-    Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01), 0.5/Math.max(unit.здоровье, 0.01)), 0.01),
+    Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01), 
+    0.5/Math.max(unit.здоровье, 0.01)), 0.01),
     30.0/7.0
 )]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
@@ -3954,6 +3955,21 @@ if (совпадение) {
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1779970966826</Id>
+					<Name><![CDATA[absenteeismProbability]]></Name>
+					<X>230</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
