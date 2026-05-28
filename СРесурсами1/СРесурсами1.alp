@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.8.202602271013" AlpVersion="8.9.7">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.5.202310311109" AlpVersion="8.8.2">
 <Model>
 	<Id>1775594893252</Id>
 	<Name><![CDATA[СРесурсами1]]></Name>
@@ -2157,7 +2157,7 @@ else
 						<Parameter>
 							<Name><![CDATA[initialTimeToFailure]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[Math.max(uniform(0, 365*unit.здоровье), 1)
+								<Code><![CDATA[Math.max(uniform(0, 365 * Math.max(unit.здоровье, 0.05)), 1)
 ]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
@@ -2170,7 +2170,7 @@ else
         ? uniform(30, 90)
         : 1
     : (((Работник)unit).текущийПростойАбсентеизм = false) == false
-        ? Math.max(triangularAV(365*unit.здоровье*0.95, 0.1*unit.здоровье), 1)
+        ? Math.max(triangularAV(365 * Math.max(unit.здоровье, 0.05) * 0.95, 0.1 * Math.max(unit.здоровье, 0.05)), 1)
         : 1]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 							</Value>
@@ -2187,8 +2187,8 @@ else
 								<Code><![CDATA[((Работник)unit).текущийПростойАбсентеизм
     ? uniform(1, 2)
     : Math.min(
-        Math.max(triangularAV(2/Math.max(unit.здоровье, 0.01),
-        0.5/Math.max(unit.здоровье, 0.01)), 0.01),
+        Math.max(triangularAV(2/Math.max(unit.здоровье, 0.05),
+        0.5/Math.max(unit.здоровье, 0.05)), 0.01),
         30.0/7.0
       )]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
@@ -4366,12 +4366,14 @@ if (совпадение) {
         } else {
             коэффициентУтомления = 1.0;
         }
-        
-        // Влияние усталости на здоровье
+
+        // Влияние усталости на здоровье (нижняя граница 0.05)
         if (накопленнаяУсталость > 20) {
-            здоровье -= 0.5;
+            здоровье = Math.max(здоровье - 0.5, 0.05);
+            traceln("[ЗДОРОВЬЕ] t=" + time() + " усталость=" + накопленнаяУсталость
+                + " здоровье=" + здоровье + " (-0.5)");
         } else if (накопленнаяУсталость > 15) {
-            здоровье -= 0.2;
+            здоровье = Math.max(здоровье - 0.2, 0.05);
         }]]></Action>
 				</Event>
 			</Events>
