@@ -471,6 +471,36 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
+					<Id>1781560000001</Id>
+					<Name><![CDATA[суммаЗарплатВсего]]></Name>
+					<X>950</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1781560000002</Id>
+					<Name><![CDATA[суммаБольничныхВсего]]></Name>
+					<X>950</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
 					<Id>1781540000001</Id>
 					<Name><![CDATA[выручкаЗаЦикл]]></Name>
 					<X>900</X><Y>350</Y>
@@ -1230,11 +1260,14 @@ for(int i = 0; i < работники.size(); i++) {
 // Прирост выручки за цикл (ПОСЛЕ сбора данных)
 выручкаЗаЦикл = суммаВыручки - предыдущаяВыручка;
 предыдущаяВыручка = суммаВыручки;
+// Накапливаем зарплаты и больничные (не сбрасываются)
+суммаЗарплатВсего += суммаЗарплат;
+суммаБольничныхВсего += суммаБольничных;
 бюджетНаЗарплаты = суммаВыручки * 0.001;
 // Передача данных в агент Экономика
 экономика.суммаВыручки = суммаВыручки;
-экономика.суммаЗарплат = суммаЗарплат;
-экономика.суммаБольничных = суммаБольничных;
+экономика.суммаЗарплат = суммаЗарплатВсего;
+экономика.суммаБольничных = суммаБольничныхВсего;
 // Обновление SD-слоя
 if (работники.size() > 0) {
     индексБолезни = (double) кБольных / работники.size();
@@ -2645,7 +2678,7 @@ if (!р.текущийПростойАбсентеизм) {
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[суммаВыручки += 1;
-экономика.объёмПроизводства += 1;]]></Code>
+экономика.объёмСклада += 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3245,9 +3278,6 @@ if (совпадение) {
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[начальныйКапитал]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[ценностьЕдиницы]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[порогПлатёжеспособности]]></Name>
@@ -4849,7 +4879,7 @@ if (совпадение) {
 				</Variable>
 				<Variable Class="StockVariable">
 					<Id>1781529451647</Id>
-					<Name><![CDATA[объёмПроизводства]]></Name>
+					<Name><![CDATA[объёмСклада]]></Name>
 					<X>410</X><Y>320</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4936,7 +4966,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1781529392255" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 ? суммаВыручки * ценностьЕдиницы / (time(DAY)) : 0]]></Formula>
+						<Formula><![CDATA[time(DAY) > 0 ? суммаВыручки / time(DAY) : 0]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -5068,30 +5098,6 @@ if (совпадение) {
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1781529228922</Id>
-					<Name><![CDATA[ценностьЕдиницы]]></Name>
-					<X>50</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1000]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1781529228921</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1781529228925</Id>
 					<Name><![CDATA[порогПлатёжеспособности]]></Name>
 					<X>50</X><Y>150</Y>
@@ -5173,21 +5179,6 @@ if (совпадение) {
 					<Id>1781529829255</Id>
 					<Name><![CDATA[начальныйКапитал - запасыДенег]]></Name>
 					<X>50</X><Y>50</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color>-11832691</Color>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1781529228922" TargetId="1781529490205" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>240</X><Y>225</Y></Direction>
-					<Id>1781529912279</Id>
-					<Name><![CDATA[ценностьЕдиницы - потокДохода]]></Name>
-					<X>50</X><Y>100</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
