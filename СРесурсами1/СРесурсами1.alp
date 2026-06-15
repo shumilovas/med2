@@ -1171,6 +1171,7 @@ for(int i = 0; i < работники.size(); i++) {
 // Передача данных в агент Экономика
 экономика.суммаЗарплат = суммаЗарплат;
 экономика.суммаБольничных = суммаБольничных;
+экономика.суммаВыручки = суммаВыручки;
 // Обновление SD-слоя
 if (работники.size() > 0) {
     индексБолезни = (double) кБольных / работники.size();
@@ -4753,15 +4754,18 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1781536691125</Id>
+					<Id>1781537000001</Id>
 					<Name><![CDATA[суммаВыручки]]></Name>
-					<X>330</X><Y>190</Y>
+					<X>350</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="StockVariable">
@@ -5064,13 +5068,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781536691125" TargetId="1781529490205" Polarity="null">
+				<Link SourceId="1781537000001" TargetId="1781529490205" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-40</X><Y>135</Y></Direction>
-					<Id>1781536836560</Id>
+					<Direction><X>-60</X><Y>95</Y></Direction>
+					<Id>1781537175271</Id>
 					<Name><![CDATA[суммаВыручки - потокДохода]]></Name>
-					<X>330</X><Y>190</Y>
+					<X>350</X><Y>230</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
