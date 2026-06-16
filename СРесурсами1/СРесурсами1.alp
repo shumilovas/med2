@@ -4938,6 +4938,38 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="StockVariable">
+					<Id>1781700000001</Id>
+					<Name><![CDATA[ЗатратыНаСырьё]]></Name>
+					<X>520</X><Y>550</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<InitialValue><![CDATA[0]]></InitialValue>
+						<Color>-4073239</Color>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1781700000002</Id>
+					<Name><![CDATA[ЗатратыНаПрограмму]]></Name>
+					<X>570</X><Y>650</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<InitialValue><![CDATA[0]]></InitialValue>
+						<Color>-4073239</Color>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
 					<Id>1781546421389</Id>
 					<Name><![CDATA[источник]]></Name>
 					<X>610</X><Y>310</Y>
@@ -4986,6 +5018,44 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="Flow">
+					<Id>1781700000003</Id>
+					<Name><![CDATA[потокЗатратНаСырьё]]></Name>
+					<X>250</X><Y>520</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1781529392255" TargetId="1781700000001" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[time(DAY) > 1 ? (суммаЗатратНаСырьё - ЗатратыНаСырьё) : 0]]></Formula>
+						<Color>-4073239</Color>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>70</X><Y>0</Y></Point>
+							<Point><X>270</X><Y>30</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1781700000004</Id>
+					<Name><![CDATA[потокЗатратНаПрограмму]]></Name>
+					<X>250</X><Y>620</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1781529392255" TargetId="1781700000002" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[time(DAY) > 0 && (boolean)main.РаботаетЛиСистемаЗдравосохранения ? (double)main.количествоРаботников * стоимостьНаЧеловека / time(DAY) : 0]]></Formula>
+						<Color>-4073239</Color>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>70</X><Y>0</Y></Point>
+							<Point><X>320</X><Y>30</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
 					<Id>1781529490205</Id>
 					<Name><![CDATA[потокДохода]]></Name>
 					<X>370</X><Y>30</Y>
@@ -5013,7 +5083,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781529392255" TargetId="1781529681266" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 ? (суммаЗарплат + суммаБольничных + суммаЗатратНаСырьё) / time(DAY) : 0]]></Formula>
+						<Formula><![CDATA[time(DAY) > 0 ? (суммаЗарплат + суммаБольничных) / time(DAY) : 0]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -5152,7 +5222,7 @@ if (совпадение) {
 				<Variable Class="Parameter">
 					<Id>1781529228928</Id>
 					<Name><![CDATA[стоимостьНаЧеловека]]></Name>
-					<X>50</X><Y>200</Y>
+					<X>60</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5305,21 +5375,6 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781570000003" TargetId="1781529618771" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-45</X><Y>-90</Y></Direction>
-					<Id>1781559947514</Id>
-					<Name><![CDATA[суммаЗатратНаСырьё - потокЗатратНаПерсонал]]></Name>
-					<X>310</X><Y>460</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color/>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
 				<Link SourceId="1781560331948" TargetId="1781546600174" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
@@ -5357,6 +5412,51 @@ if (совпадение) {
 					<Id>1781561653143</Id>
 					<Name><![CDATA[объёмСклада - скоростьПроизводства]]></Name>
 					<X>410</X><Y>320</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1781570000003" TargetId="1781700000003" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>10</X><Y>60</Y></Direction>
+					<Id>1781649089018</Id>
+					<Name><![CDATA[суммаЗатратНаСырьё - потокЗатратНаСырьё]]></Name>
+					<X>310</X><Y>460</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1781529228928" TargetId="1781700000004" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>260</X><Y>180</Y></Direction>
+					<Id>1781649153587</Id>
+					<Name><![CDATA[стоимостьНаЧеловека - потокЗатратНаПрограмму]]></Name>
+					<X>60</X><Y>440</Y>
+					<Label><X>40</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1781700000001" TargetId="1781700000003" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-200</X><Y>-30</Y></Direction>
+					<Id>1781650155438</Id>
+					<Name><![CDATA[ЗатратыНаСырьё - потокЗатратНаСырьё]]></Name>
+					<X>520</X><Y>550</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
