@@ -486,6 +486,21 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
+					<Id>1781700000011</Id>
+					<Name><![CDATA[суммаЗатратНаПрограммуВсего]]></Name>
+					<X>950</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
 					<Id>1781570000002</Id>
 					<Name><![CDATA[суммаЗатратНаСырьё]]></Name>
 					<X>950</X><Y>230</Y>
@@ -1266,6 +1281,7 @@ for(int i = 0; i < работники.size(); i++) {
 экономика.суммаЗарплат = суммаЗарплат;
 экономика.суммаБольничных = суммаБольничных;
 экономика.суммаЗатратНаСырьё = суммаЗатратНаСырьё;
+экономика.суммаЗатратНаПрограмму = суммаЗатратНаПрограммуВсего;
 // Обновление SD-слоя
 if (работники.size() > 0) {
     индексБолезни = (double) кБольных / работники.size();
@@ -1275,7 +1291,7 @@ if (работники.size() > 0) {
     индексБолезни = 0; индексВыгорания = 0; кадроваяНагрузка = 1.0;
 }
 стоимостьПрограммы = РаботаетЛиСистемаЗдравосохранения ? количествоРаботников * 50.0 : 0.0;
-ROI = экономика.ЗатратыНаПрограмму > 0 ? (экономика.ЗатратыНаСырьё + экономика.ЗатратыНаПерсонал + экономика.ЗатратыНаПрограмму) > 0 ? (суммаВыручки - экономика.ЗатратыНаПерсонал - экономика.ЗатратыНаСырьё - экономика.ЗатратыНаПрограмму) / экономика.ЗатратыНаПрограмму * 100 : 0 : 0;
+ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВыручки - экономика.ЗатратыНаПерсонал - экономика.ЗатратыНаСырьё - суммаЗатратНаПрограммуВсего) / суммаЗатратНаПрограммуВсего * 100 : 0;
 экономика.ROI = ROI;]]></Action>
 				</Event>
 				<Event>
@@ -2296,16 +2312,23 @@ else
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[enableMaintenance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[initialTimeToMaintenance]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform( 0, времяМеждуСтандартныммиМедПредприятиями)]]></Code>
+								<Code><![CDATA[uniform(0, 168)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[timeBetweenMaintenances]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[168]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTaskPriority]]></Name>
@@ -2318,6 +2341,10 @@ else
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTime]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[2]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTaskStart]]></Name>
@@ -2466,6 +2493,15 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onMaintenanceStart]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[Работник р = (Работник)unit;
+// Зачисляем стоимость спортзала напрямую в Main
+if (РаботаетЛиСистемаЗдравосохранения) {
+    суммаЗатратНаПрограммуВсего += базовыйРазмерГодовойПремииЗаФизическуюАктивность / периодичностьВыплатПремииЗаФизАктивность;
+    // Улучшаем здоровье при посещении спортзала
+    р.здоровье = Math.min(р.здоровье + 0.01, 2.3);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onMaintenanceEnd]]></Name>
@@ -3972,6 +4008,21 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
+					<Id>1781700000010</Id>
+					<Name><![CDATA[суммаЗатратНаПрограмму]]></Name>
+					<X>270</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
 					<Id>1779397225586</Id>
 					<Name><![CDATA[зарплата]]></Name>
 					<X>50</X><Y>140</Y>
@@ -4877,6 +4928,21 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
+					<Id>1781700000012</Id>
+					<Name><![CDATA[суммаЗатратНаПрограмму]]></Name>
+					<X>220</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
 					<Id>1781700000005</Id>
 					<Name><![CDATA[ROI]]></Name>
 					<X>100</X><Y>560</Y>
@@ -5058,7 +5124,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781529392255" TargetId="1781700000002" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 && (boolean)main.РаботаетЛиСистемаЗдравосохранения ? (double)main.количествоРаботников * стоимостьНаЧеловека / time(DAY) : 0]]></Formula>
+						<Formula><![CDATA[time(DAY) > 0 ? суммаЗатратНаПрограмму / time(DAY) : 0]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -5448,13 +5514,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781529228928" TargetId="1781700000004" Polarity="null">
+				<Link SourceId="1781700000001" TargetId="1781700000003" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>260</X><Y>180</Y></Direction>
-					<Id>1781649153587</Id>
-					<Name><![CDATA[стоимостьНаЧеловека - потокЗатратНаПрограмму]]></Name>
-					<X>60</X><Y>440</Y>
+					<Direction><X>-200</X><Y>-30</Y></Direction>
+					<Id>1781650155438</Id>
+					<Name><![CDATA[ЗатратыНаСырьё - потокЗатратНаСырьё]]></Name>
+					<X>520</X><Y>550</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5463,13 +5529,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781700000001" TargetId="1781700000003" Polarity="null">
+				<Link SourceId="1781700000012" TargetId="1781700000004" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-200</X><Y>-30</Y></Direction>
-					<Id>1781650155438</Id>
-					<Name><![CDATA[ЗатратыНаСырьё - потокЗатратНаСырьё]]></Name>
-					<X>520</X><Y>550</Y>
+					<Direction><X>100</X><Y>50</Y></Direction>
+					<Id>1781716422165</Id>
+					<Name><![CDATA[суммаЗатратНаПрограмму - потокЗатратНаПрограмму]]></Name>
+					<X>220</X><Y>570</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
