@@ -3707,7 +3707,7 @@ if (совпадение) {
 				<Text>
 					<Id>1782000000002</Id>
 					<Name><![CDATA[fpTitle]]></Name>
-					<X>1110</X><Y>72</Y>
+					<X>1110</X><Y>10</Y>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
