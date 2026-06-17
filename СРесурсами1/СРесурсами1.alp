@@ -1275,7 +1275,8 @@ if (работники.size() > 0) {
     индексБолезни = 0; индексВыгорания = 0; кадроваяНагрузка = 1.0;
 }
 стоимостьПрограммы = РаботаетЛиСистемаЗдравосохранения ? количествоРаботников * 50.0 : 0.0;
-ROI = стоимостьПрограммы > 0 ? (суммаВыручки - суммаЗарплат - суммаБольничных - стоимостьПрограммы) / стоимостьПрограммы * 100 : 0;]]></Action>
+ROI = экономика.ЗатратыНаПрограмму > 0 ? (экономика.ЗатратыНаСырьё + экономика.ЗатратыНаПерсонал + экономика.ЗатратыНаПрограмму) > 0 ? (суммаВыручки - экономика.ЗатратыНаПерсонал - экономика.ЗатратыНаСырьё - экономика.ЗатратыНаПрограмму) / экономика.ЗатратыНаПрограмму * 100 : 0 : 0;
+экономика.ROI = ROI;]]></Action>
 				</Event>
 				<Event>
 					<Id>1779301220065</Id>
@@ -4875,6 +4876,18 @@ if (совпадение) {
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1781700000005</Id>
+					<Name><![CDATA[ROI]]></Name>
+					<X>100</X><Y>560</Y>
+					<Label><X>0</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="AuxVariable">
 					<Id>1781560331948</Id>
 					<Name><![CDATA[parскоростьПополненияРынкаВдень]]></Name>
@@ -5623,7 +5636,7 @@ if (совпадение) {
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
