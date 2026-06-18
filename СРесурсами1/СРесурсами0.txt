@@ -486,141 +486,6 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1781800000000</Id>
-					<Name><![CDATA[количествоРаботниковРекомендуемое]]></Name>
-					<X>1150</X><Y>70</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000001</Id>
-					<Name><![CDATA[площадьПроизводства]]></Name>
-					<X>1150</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000002</Id>
-					<Name><![CDATA[площадьОбеденногоЗала]]></Name>
-					<X>1150</X><Y>130</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000003</Id>
-					<Name><![CDATA[площадьСклада]]></Name>
-					<X>1150</X><Y>160</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000004</Id>
-					<Name><![CDATA[объёмХолодильников]]></Name>
-					<X>1150</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000005</Id>
-					<Name><![CDATA[площадьЗоныОтдыха]]></Name>
-					<X>1150</X><Y>220</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000006</Id>
-					<Name><![CDATA[мощностьВытяжки]]></Name>
-					<X>1150</X><Y>250</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781800000007</Id>
-					<Name><![CDATA[бюджетНаПерсоналФакт]]></Name>
-					<X>1150</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781700000011</Id>
-					<Name><![CDATA[суммаЗатратНаПрограммуВсего]]></Name>
-					<X>950</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="default" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1781570000002</Id>
 					<Name><![CDATA[суммаЗатратНаСырьё]]></Name>
 					<X>950</X><Y>230</Y>
@@ -769,30 +634,6 @@
 							<Code><![CDATA[0.0]]></Code>
 						</InitialValue>
 					</Properties>
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1781800000020</Id>
-					<Name><![CDATA[рынокПациентов]]></Name>
-					<X>20</X><Y>470</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[180]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1781800000021</Id>
-							<EditorContolType>SLIDER</EditorContolType>
-							<MinSliderValue><![CDATA[50]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[600]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1775595135916</Id>
@@ -1425,7 +1266,6 @@ for(int i = 0; i < работники.size(); i++) {
 экономика.суммаЗарплат = суммаЗарплат;
 экономика.суммаБольничных = суммаБольничных;
 экономика.суммаЗатратНаСырьё = суммаЗатратНаСырьё;
-экономика.суммаЗатратНаПрограмму = суммаЗатратНаПрограммуВсего;
 // Обновление SD-слоя
 if (работники.size() > 0) {
     индексБолезни = (double) кБольных / работники.size();
@@ -1435,17 +1275,8 @@ if (работники.size() > 0) {
     индексБолезни = 0; индексВыгорания = 0; кадроваяНагрузка = 1.0;
 }
 стоимостьПрограммы = РаботаетЛиСистемаЗдравосохранения ? количествоРаботников * 50.0 : 0.0;
-ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВыручки - экономика.ЗатратыНаПерсонал - экономика.ЗатратыНаСырьё - суммаЗатратНаПрограммуВсего) / суммаЗатратНаПрограммуВсего * 100 : 0;
-экономика.ROI = ROI;
-// Обновляем расчётные переменные пищеблока
-количествоРаботниковРекомендуемое = Math.ceil(экономика.рынок * 5.0 / 150.0 / 5.0);
-площадьПроизводства    = количествоРаботниковРекомендуемое * 8.0;
-площадьОбеденногоЗала  = экономика.рынок * 1.25 / 2.0;
-площадьСклада          = экономика.рынок * 5 * 0.003 * 3;
-объёмХолодильников     = экономика.рынок * 5 * 0.4 * 0.0015 * 3;
-площадьЗоныОтдыха      = количествоРаботниковРекомендуемое * 0.9 * кадроваяНагрузка;
-мощностьВытяжки        = Math.min(количествоРаботниковРекомендуемое, 4) * 5000 * кадроваяНагрузка;
-бюджетНаПерсоналФакт   = суммаЗарплат + суммаБольничных;]]></Action>
+ROI = экономика.ЗатратыНаПрограмму > 0 ? (экономика.ЗатратыНаСырьё + экономика.ЗатратыНаПерсонал + экономика.ЗатратыНаПрограмму) > 0 ? (суммаВыручки - экономика.ЗатратыНаПерсонал - экономика.ЗатратыНаСырьё - экономика.ЗатратыНаПрограмму) / экономика.ЗатратыНаПрограмму * 100 : 0 : 0;
+экономика.ROI = ROI;]]></Action>
 				</Event>
 				<Event>
 					<Id>1779301220065</Id>
@@ -2465,23 +2296,16 @@ else
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[enableMaintenance]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[true]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[initialTimeToMaintenance]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0, 168)]]></Code>
+								<Code><![CDATA[uniform( 0, времяМеждуСтандартныммиМедПредприятиями)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[timeBetweenMaintenances]]></Name>
-							<Value Class="CodeUnitValue">
-								<Code><![CDATA[168]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTaskPriority]]></Name>
@@ -2494,10 +2318,6 @@ else
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTime]]></Name>
-							<Value Class="CodeUnitValue">
-								<Code><![CDATA[2]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maintenanceTaskStart]]></Name>
@@ -2646,15 +2466,6 @@ unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onMaintenanceStart]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[Работник р = (Работник)unit;
-// Зачисляем стоимость спортзала напрямую в Main
-if (РаботаетЛиСистемаЗдравосохранения) {
-    суммаЗатратНаПрограммуВсего += базовыйРазмерГодовойПремииЗаФизическуюАктивность / периодичностьВыплатПремииЗаФизАктивность;
-    // Улучшаем здоровье при посещении спортзала
-    р.здоровье = Math.min(р.здоровье + 0.01, 2.3);
-}]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onMaintenanceEnd]]></Name>
@@ -3704,26 +3515,6 @@ if (совпадение) {
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
-				<Text>
-					<Id>1782000000002</Id>
-					<Name><![CDATA[fpTitle]]></Name>
-					<X>1110</X><Y>72</Y>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Функц. требования пищеблока]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>16</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 			</Presentation>
 
 				</Level>
@@ -4169,21 +3960,6 @@ if (совпадение) {
 					<Id>1779395740521</Id>
 					<Name><![CDATA[суммаБольничных]]></Name>
 					<X>270</X><Y>170</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781700000010</Id>
-					<Name><![CDATA[суммаЗатратНаПрограмму]]></Name>
-					<X>270</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5101,21 +4877,6 @@ if (совпадение) {
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1781700000012</Id>
-					<Name><![CDATA[суммаЗатратНаПрограмму]]></Name>
-					<X>220</X><Y>570</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0.0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1781700000005</Id>
 					<Name><![CDATA[ROI]]></Name>
 					<X>100</X><Y>560</Y>
@@ -5249,7 +5010,7 @@ if (совпадение) {
 					<EquationStyle>classic</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<InitialValue><![CDATA[(double)main.рынокПациентов]]></InitialValue>
+						<InitialValue><![CDATA[180]]></InitialValue>
 						<Color/>
 					</Properties>
 				</Variable>
@@ -5297,7 +5058,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781529392255" TargetId="1781700000002" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 ? суммаЗатратНаПрограмму / time(DAY) : 0]]></Formula>
+						<Formula><![CDATA[time(DAY) > 0 && (boolean)main.РаботаетЛиСистемаЗдравосохранения ? (double)main.количествоРаботников * стоимостьНаЧеловека / time(DAY) : 0]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -5687,13 +5448,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781700000001" TargetId="1781700000003" Polarity="null">
+				<Link SourceId="1781529228928" TargetId="1781700000004" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>-200</X><Y>-30</Y></Direction>
-					<Id>1781650155438</Id>
-					<Name><![CDATA[ЗатратыНаСырьё - потокЗатратНаСырьё]]></Name>
-					<X>520</X><Y>550</Y>
+					<Direction><X>260</X><Y>180</Y></Direction>
+					<Id>1781649153587</Id>
+					<Name><![CDATA[стоимостьНаЧеловека - потокЗатратНаПрограмму]]></Name>
+					<X>60</X><Y>440</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5702,13 +5463,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781700000012" TargetId="1781700000004" Polarity="null">
+				<Link SourceId="1781700000001" TargetId="1781700000003" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>100</X><Y>50</Y></Direction>
-					<Id>1781716422165</Id>
-					<Name><![CDATA[суммаЗатратНаПрограмму - потокЗатратНаПрограмму]]></Name>
-					<X>220</X><Y>570</Y>
+					<Direction><X>-200</X><Y>-30</Y></Direction>
+					<Id>1781650155438</Id>
+					<Name><![CDATA[ЗатратыНаСырьё - потокЗатратНаСырьё]]></Name>
+					<X>520</X><Y>550</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5954,21 +5715,6 @@ if (совпадение) {
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1781727859580</Id>
-					<Name><![CDATA[рынокПациентов]]></Name>
-					<X>50</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[180]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
 			</Variables>
 
 			<Presentation>
@@ -6157,29 +5903,6 @@ if (совпадение) {
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1781900000001</Id>
-					<Name><![CDATA[slidРынокПациентов]]></Name>
-					<X>190</X><Y>430</Y>
-					<Label><X>0</X><Y>-14</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="150" Height="30">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<Enabled>true</Enabled>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[180]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[50]]></MinValue>
-						<MaxValue><![CDATA[600]]></MaxValue>
-						<LinkTo>true</LinkTo>
-						<Link>рынокПациентов</Link>
-					</ExtendedProperties>
-				</Control>
 			</Presentation>
 
 			<Parameters>			
@@ -6187,12 +5910,6 @@ if (совпадение) {
 					<ParameterName><![CDATA[количествоРаботников]]></ParameterName>
 					<ParameterValue Class="CodeValue">
 						<Code><![CDATA[КоличествоРаботников]]></Code>
-					</ParameterValue>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[рынокПациентов]]></ParameterName>
-					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[рынокПациентов]]></Code>
 					</ParameterValue>
 				</Parameter>
 				<Parameter>
