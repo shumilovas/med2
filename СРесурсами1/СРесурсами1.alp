@@ -282,13 +282,13 @@ Node nodeWardFar = палаты3_4;
 			<ScaleRuler>
 				<Id>1775594893258</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>315</X><Y>690</Y>
+				<X>25</X><Y>905</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<Length>50</Length>
-				<Rotation>0</Rotation>
+				<Rotation>300</Rotation>
 				<ScaleType>BASED_ON_LENGTH</ScaleType>
 				<ModelLength>2.8</ModelLength>
 				<LengthUnits>METER</LengthUnits>
@@ -1960,33 +1960,50 @@ for (int i = работники.size()-1; i >= 0; i--) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[Node nodeHotKitchen = горячийЦех;
-Node nodeServing = раздаточная;
-Node nodeDining = ОбеденныйЗал;
-Node nodeEntrance = вход;
+					<Body><![CDATA[// 1. Масштаб: 1 единица AnyLogic = 0.01 метра (1 см)
+double scaleFactor = 0.01; 
 
-// Проверка на null для узлов
+// 2. Коэффициент коррекции: умножаем итоговое расстояние в метрах на 3
+double correctionCoefficient = 3.0;
+
+// 3. Получаем узлы (убедись, что имена совпадают с именами на схеме!)
+Node nodeServing = раздаточная;      // узел раздачи
+Node nodeDining = ОбеденныйЗал;     // узел обеденного зала
+
+// 4. Проверка на null (чтобы не было ошибки, если узел не найден)
 if (nodeServing == null || nodeDining == null) {
-    traceln("Ошибка: Один из узлов (nodeServing или nodeDining) не назначен!");
+    traceln("ОШИБКА: Узлы не назначены! Проверь имена переменных в свойствах агента Main.");
     return;
 }
 
-// Получаем координаты
-double x1 = getNodeX(nodeServing);
-double y1 = getNodeY(nodeServing);
-double x2 = getNodeX(nodeDining);
-double y2 = getNodeY(nodeDining);
+// 5. Считаем расстояние в единицах AnyLogic (ОДИН РАЗ!)
+double distanceUnits = Utilities.getDistance(
+    getNodeX(nodeServing), 
+    getNodeY(nodeServing), 
+    getNodeX(nodeDining), 
+    getNodeY(nodeDining)
+);
 
-// Считаем расстояние
-double distance = Utilities.getDistance(x1, y1, x2, y2);
+// 6. Переводим в метры с учётом коэффициента коррекции
+double distanceMeters = distanceUnits * scaleFactor * correctionCoefficient;
 
-// Пример валидации: допустим, путь не должен быть больше 50 единиц
-double maxAllowedDistance = 50.0;
+// 7. Лимит теперь ставим в МЕТРАХ (с учётом того, что расстояние уже утроено)
+double maxAllowedDistanceMeters = 50.0; 
 
-if (distance > maxAllowedDistance) {
-    traceln("ПРЕДУПРЕЖДЕНИЕ: Расстояние между узлами слишком большое: " + distance + " ед. Лимит: " + maxAllowedDistance + " ед.");
+// 8. Вывод основных результатов в консоль
+traceln("Расстояние в единицах AnyLogic: " + distanceUnits);
+traceln("Расстояние в метрах (с коэффициентом x3): " + distanceMeters + " м");
+
+
+// 10. Выводим гипотенузу (используем УЖЕ ПОСЧИТАННУЮ переменную distanceUnits)
+traceln("Гипотенуза (прямое расстояние): " + distanceUnits + " ед.");
+traceln("----------------------");
+
+// 11. Проверка лимита
+if (distanceMeters > maxAllowedDistanceMeters) {
+    traceln("ПРЕДУПРЕЖДЕНИЕ: Расстояние слишком большое: " + distanceMeters + " м. Лимит: " + maxAllowedDistanceMeters + " м.");
 } else {
-    traceln("Маршрут валиден. Расстояние: " + distance + " ед.");
+    traceln("Маршрут валиден. Расстояние: " + distanceMeters + " м.");
 }
 ]]></Body>
 				</Function>
