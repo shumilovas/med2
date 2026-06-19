@@ -4690,7 +4690,7 @@ if (совпадение) {
 				<PointNode>
 					<Id>1781807779055</Id>
 					<Name><![CDATA[палаты1_2]]></Name>
-					<X>230</X><Y>730</Y>
+					<X>15</X><Y>735</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4710,7 +4710,7 @@ if (совпадение) {
 				<Path SourceId="1781807779055" TargetId="1781807870879">
 					<Id>1781807828864</Id>
 					<Name><![CDATA[path]]></Name>
-					<X>230</X><Y>730</Y>
+					<X>15</X><Y>735</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4729,13 +4729,13 @@ if (совпадение) {
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>90</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>65</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>90</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>90</X><Y>60</Y><Z>0</Z></Point>
-						<Point><X>90</X><Y>35</Y><Z>0</Z></Point>
-						<Point><X>90</X><Y>85</Y><Z>0</Z></Point>
+						<Point><X>24.996641364934135</X><Y>-0.4097810059825271</Y><Z>0</Z></Point>
+						<Point><X>305</X><Y>-5</Y><Z>0</Z></Point>
+						<Point><X>280.00335863506587</X><Y>-4.590218994017473</Y><Z>0</Z></Point>
+						<Point><X>305</X><Y>20</Y><Z>0</Z></Point>
+						<Point><X>305</X><Y>55</Y><Z>0</Z></Point>
+						<Point><X>305</X><Y>30</Y><Z>0</Z></Point>
+						<Point><X>305</X><Y>80</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -4937,7 +4937,7 @@ if (совпадение) {
 				<Path SourceId="1781808485698" TargetId="1781808453405">
 					<Id>1781808500660</Id>
 					<Name><![CDATA[path9]]></Name>
-					<X>480</X><Y>860</Y>
+					<X>486.312</X><Y>859.668</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4954,12 +4954,12 @@ if (совпадение) {
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</Width>
 					<Points>
-						<Point><X>6.312</X><Y>-0.332</Y><Z>0</Z></Point>
-						<Point><X>26.336</X><Y>14.636</Y><Z>0</Z></Point>
-						<Point><X>-13.712</X><Y>-15.3</Y><Z>0</Z></Point>
-						<Point><X>-20</X><Y>-20</Y><Z>0</Z></Point>
-						<Point><X>0.024</X><Y>-5.032</Y><Z>0</Z></Point>
-						<Point><X>24.966</X><Y>-1.311</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>20.023999999999997</X><Y>14.968</Y><Z>0</Z></Point>
+						<Point><X>-20.024</X><Y>-14.968</Y><Z>0</Z></Point>
+						<Point><X>-26.312</X><Y>-19.668</Y><Z>0</Z></Point>
+						<Point><X>-6.288</X><Y>-4.7</Y><Z>0</Z></Point>
+						<Point><X>18.654</X><Y>-0.9789999999999999</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5048,10 +5048,10 @@ if (совпадение) {
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-20.919102497181758</X><Y>13.689088746604131</Y><Z>0</Z></Point>
-						<Point><X>20.91910249718176</X><Y>-13.689088746604131</Y><Z>0</Z></Point>
-						<Point><X>175.3063590011273</X><Y>-114.71736450135835</Y><Z>0</Z></Point>
-						<Point><X>154.38725650394554</X><Y>-101.02827575475422</Y><Z>0</Z></Point>
-						<Point><X>-20.871640998872696</X><Y>-2.190364501358353</Y><Z>0</Z></Point>
+						<Point><X>23.350412915198465</X><Y>-8.930745584201402</Y><Z>0</Z></Point>
+						<Point><X>365.3063590011273</X><Y>-139.71736450135836</Y><Z>0</Z></Point>
+						<Point><X>341.9559460859288</X><Y>-130.78661891715697</Y><Z>0</Z></Point>
+						<Point><X>169.1283590011273</X><Y>-27.190364501358367</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5065,7 +5065,7 @@ if (совпадение) {
 				<PointNode>
 					<Id>1781808426924</Id>
 					<Name><![CDATA[холодныйЦех]]></Name>
-					<X>660</X><Y>740</Y>
+					<X>850</X><Y>715</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5121,7 +5121,7 @@ if (совпадение) {
 				<Path SourceId="1781808485698" TargetId="1781808440798">
 					<Id>1781808491833</Id>
 					<Name><![CDATA[path8]]></Name>
-					<X>480</X><Y>860</Y>
+					<X>486.312</X><Y>859.668</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5138,12 +5138,12 @@ if (совпадение) {
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</Width>
 					<Points>
-						<Point><X>6.312</X><Y>-0.332</Y><Z>0</Z></Point>
-						<Point><X>-18.546</X><Y>2.33</Y><Z>0</Z></Point>
-						<Point><X>31.17</X><Y>-2.994</Y><Z>0</Z></Point>
-						<Point><X>190</X><Y>-20</Y><Z>0</Z></Point>
-						<Point><X>165.142</X><Y>-17.338</Y><Z>0</Z></Point>
-						<Point><X>39.611</X><Y>-15.956</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-24.858</X><Y>2.662</Y><Z>0</Z></Point>
+						<Point><X>24.858</X><Y>-2.6620000000000004</Y><Z>0</Z></Point>
+						<Point><X>183.688</X><Y>-19.668</Y><Z>0</Z></Point>
+						<Point><X>158.82999999999998</X><Y>-17.006</Y><Z>0</Z></Point>
+						<Point><X>33.299</X><Y>-15.623999999999999</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5174,7 +5174,7 @@ if (совпадение) {
 						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 					</SpeedLimitValue>
 				</PointNode>
-				<Path SourceId="1781808512250">
+				<Path SourceId="1781808512250" TargetId="1781812841512">
 					<Id>1781808512254</Id>
 					<Name><![CDATA[path11]]></Name>
 					<X>320</X><Y>850</Y>
@@ -5699,7 +5699,7 @@ if (совпадение) {
 					<Height>80</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
-				<Path SourceId="1781812620229">
+				<Path SourceId="1781812620229" TargetId="1781882500463">
 					<Id>1781808014289</Id>
 					<Name><![CDATA[path4]]></Name>
 					<X>470</X><Y>960</Y>
@@ -6341,14 +6341,188 @@ if (совпадение) {
 					<Height>80</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
-			</Presentation>
-
+				<RectangleNode>
+					<Id>1781882500463</Id>
+					<Name><![CDATA[вход]]></Name>
+					<X>570</X><Y>1060</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-				</Network>
+					<EmbeddedObject>
+						<Id>1781882500462</Id>
+						<ActiveObjectClass>
+							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
+							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
+						</ActiveObjectClass>
+						<GenericParameterSubstitute>
+							<GenericParameterSubstituteReference>
+								<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
+								<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
+								<ItemName><![CDATA[1574694148121]]></ItemName>
+							</GenericParameterSubstituteReference>
+						</GenericParameterSubstitute>
+						<Parameters>
+							<Parameter>
+								<Name><![CDATA[appliedClass]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[speedRestricted]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[maxSpeed]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestricted]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestrictionType]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[accessRestrictionCondition]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[capacity]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[throughput]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[schedule]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[avoidedIfClosed]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onEnter]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onEnterDenied]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onExit]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onOpen]]></Name>
+							</Parameter>
+							<Parameter>
+								<Name><![CDATA[onClose]]></Name>
+							</Parameter>
+						</Parameters>
+						<ReplicationFlag>false</ReplicationFlag>
+						<Replication Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</Replication>
+						<CollectionType>ARRAY_LIST_BASED</CollectionType>
+						<InitialLocationType>XYZ</InitialLocationType>
+						<ColumnCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ColumnCode>
+						<RowCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</RowCode>
+						<LocationNameCode Class="CodeValue">
+							<Code><![CDATA[""]]></Code>
+						</LocationNameCode>
+						<InitializationType>SPECIFIED_NUMBER</InitializationType>
+						<InitializationDatabaseTableQuery>
+							<Id>1781882500461</Id>
+							<TableReference>
+							</TableReference>
+						</InitializationDatabaseTableQuery>
+						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+						<QuantityColumn>
+						</QuantityColumn>
+					</EmbeddedObject>
+					<LineColor>-14774017</LineColor>
+					<FillColor/>
+					<LineWidth>1</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillMaterial>null</FillMaterial>
+					<LineStyle>DASHED</LineStyle>
+					<AttractorsLayout>random</AttractorsLayout>
+					<Sloped>false</Sloped>
+					<Slope>
+						<Id>1781882500465</Id>
+						<Name><![CDATA[вход]]></Name>
+						<X>0</X><Y>10</Y>
+						<PublicFlag>false</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>true</ShowLabel>
+						<Dx>20</Dx>
+						<Dy>0</Dy>
+						<Dz>0</Dz>
+						<AngleX>30</AngleX>
+						<AngleZ>0</AngleZ>
+						<SlopeType>angle</SlopeType>	
+					</Slope>
+
+					<Width>30</Width>
+					<Height>170</Height>
+					<Rotation>0.0</Rotation>
+				</RectangleNode>
+				<Path SourceId="1781882500463" TargetId="1781807959517">
+					<Id>1781807997033</Id>
+					<Name><![CDATA[path3]]></Name>
+					<X>570</X><Y>1070</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-14774017</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineWidth>1</LineWidth>
+					<PathType>dashedLine</PathType>
+					
+					<Width Class="UnitValue">
+						<Value Class="Double">1</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</Width>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-25</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-40</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>-15</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Bidirectional>true</Bidirectional>
+					<SpeedLimit>false</SpeedLimit>
+					<SpeedLimitValue Class="CodeUnitValue">
+						<Code><![CDATA[10.0]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</SpeedLimitValue>
+					<LimitNumberOfTransporters>false</LimitNumberOfTransporters>
+					<LimitNumberOfTransportersValue>10</LimitNumberOfTransportersValue>
+				</Path>
+				<PointNode>
+					<Id>1781807959517</Id>
+					<Name><![CDATA[ЗонаПерсонала]]></Name>
+					<X>570</X><Y>1030</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<FakeNode>false</FakeNode>	
+					<Lock>false</Lock>
+					<Color>-14774017</Color>
+					<Radius>10</Radius>
+					<SpeedLimit>false</SpeedLimit>
+					<SpeedLimitValue Class="UnitValue">
+						<Value Class="Double">10</Value>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</SpeedLimitValue>
+				</PointNode>
 				<RectangleNode>
 					<Id>1781812841512</Id>
 					<Name><![CDATA[ОбеденныйЗал]]></Name>
-					<X>130</X><Y>1000</Y>
+					<X>-30</X><Y>1000</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6463,10 +6637,14 @@ if (совпадение) {
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>110</Width>
+					<Width>270</Width>
 					<Height>50</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
+			</Presentation>
+
+					<Z>0</Z>
+				</Network>
 				<EmbeddedObjectPresentation>
 					<Id>1781813270026</Id>
 					<Name><![CDATA[moveTo_presentation]]></Name>
@@ -6679,199 +6857,6 @@ if (совпадение) {
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
-				<Network>
-					<Id>1781882490041</Id>
-					<Name><![CDATA[network1]]></Name>
-					<X>570</X><Y>1070</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-
-			<Presentation>
-				<Path TargetId="1781807959517">
-					<Id>1781807997033</Id>
-					<Name><![CDATA[path3]]></Name>
-					<X>570</X><Y>1070</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LineColor>-14774017</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineWidth>1</LineWidth>
-					<PathType>dashedLine</PathType>
-					
-					<Width Class="UnitValue">
-						<Value Class="Double">1</Value>
-						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-					</Width>
-					<Points>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-25</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-40</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>-15</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-					<Bidirectional>true</Bidirectional>
-					<SpeedLimit>false</SpeedLimit>
-					<SpeedLimitValue Class="CodeUnitValue">
-						<Code><![CDATA[10.0]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</SpeedLimitValue>
-					<LimitNumberOfTransporters>false</LimitNumberOfTransporters>
-					<LimitNumberOfTransportersValue>10</LimitNumberOfTransportersValue>
-				</Path>
-				<PointNode>
-					<Id>1781807959517</Id>
-					<Name><![CDATA[ЗонаПерсонала]]></Name>
-					<X>570</X><Y>1030</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<FakeNode>false</FakeNode>	
-					<Lock>false</Lock>
-					<Color>-14774017</Color>
-					<Radius>10</Radius>
-					<SpeedLimit>false</SpeedLimit>
-					<SpeedLimitValue Class="UnitValue">
-						<Value Class="Double">10</Value>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</SpeedLimitValue>
-				</PointNode>
-			</Presentation>
-
-					<Z>0</Z>
-				</Network>
-				<RectangleNode>
-					<Id>1781882500463</Id>
-					<Name><![CDATA[вход]]></Name>
-					<X>570</X><Y>1060</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<EmbeddedObject>
-						<Id>1781882500462</Id>
-						<ActiveObjectClass>
-							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
-							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
-						</ActiveObjectClass>
-						<GenericParameterSubstitute>
-							<GenericParameterSubstituteReference>
-								<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
-								<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
-								<ItemName><![CDATA[1574694148121]]></ItemName>
-							</GenericParameterSubstituteReference>
-						</GenericParameterSubstitute>
-						<Parameters>
-							<Parameter>
-								<Name><![CDATA[appliedClass]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[speedRestricted]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[maxSpeed]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[accessRestricted]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[accessRestrictionType]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[accessRestrictionCondition]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[capacity]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[throughput]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[schedule]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[avoidedIfClosed]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[onEnter]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[onEnterDenied]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[onExit]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[onOpen]]></Name>
-							</Parameter>
-							<Parameter>
-								<Name><![CDATA[onClose]]></Name>
-							</Parameter>
-						</Parameters>
-						<ReplicationFlag>false</ReplicationFlag>
-						<Replication Class="CodeValue">
-							<Code><![CDATA[100]]></Code>
-						</Replication>
-						<CollectionType>ARRAY_LIST_BASED</CollectionType>
-						<InitialLocationType>XYZ</InitialLocationType>
-						<ColumnCode Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</ColumnCode>
-						<RowCode Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</RowCode>
-						<LocationNameCode Class="CodeValue">
-							<Code><![CDATA[""]]></Code>
-						</LocationNameCode>
-						<InitializationType>SPECIFIED_NUMBER</InitializationType>
-						<InitializationDatabaseTableQuery>
-							<Id>1781882500461</Id>
-							<TableReference>
-							</TableReference>
-						</InitializationDatabaseTableQuery>
-						<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-						<QuantityColumn>
-						</QuantityColumn>
-					</EmbeddedObject>
-					<LineColor>-14774017</LineColor>
-					<FillColor/>
-					<LineWidth>1</LineWidth>
-					<LineMaterial>null</LineMaterial>
-					<FillMaterial>null</FillMaterial>
-					<LineStyle>DASHED</LineStyle>
-					<AttractorsLayout>random</AttractorsLayout>
-					<Sloped>false</Sloped>
-					<Slope>
-						<Id>1781882500465</Id>
-						<Name><![CDATA[вход]]></Name>
-						<X>0</X><Y>10</Y>
-						<PublicFlag>false</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>true</ShowLabel>
-						<Dx>20</Dx>
-						<Dy>0</Dy>
-						<Dz>0</Dz>
-						<AngleX>30</AngleX>
-						<AngleZ>0</AngleZ>
-						<SlopeType>angle</SlopeType>	
-					</Slope>
-
-					<Width>30</Width>
-					<Height>10</Height>
-					<Rotation>0.0</Rotation>
-				</RectangleNode>
 				<Control Type="Button">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1781883283205</Id>
