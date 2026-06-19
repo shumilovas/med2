@@ -282,15 +282,15 @@ Node nodeWardFar = палаты3_4;
 			<ScaleRuler>
 				<Id>1775594893258</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
+				<X>315</X><Y>690</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<Length>100</Length>
+				<Length>50</Length>
 				<Rotation>0</Rotation>
 				<ScaleType>BASED_ON_LENGTH</ScaleType>
-				<ModelLength>10</ModelLength>
+				<ModelLength>2.8</ModelLength>
 				<LengthUnits>METER</LengthUnits>
 				<Scale>10</Scale>
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
@@ -4687,30 +4687,10 @@ if (совпадение) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 
 			<Presentation>
-				<PointNode>
-					<Id>1781807779055</Id>
-					<Name><![CDATA[палаты1_2]]></Name>
-					<X>15</X><Y>735</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<FakeNode>false</FakeNode>	
-					<Lock>false</Lock>
-					<Color>-14774017</Color>
-					<Radius>10</Radius>
-					<SpeedLimit>false</SpeedLimit>
-					<SpeedLimitValue Class="UnitValue">
-						<Value Class="Double">10</Value>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</SpeedLimitValue>
-				</PointNode>
 				<Path SourceId="1781807779055" TargetId="1781807870879">
 					<Id>1781807828864</Id>
 					<Name><![CDATA[path]]></Name>
-					<X>15</X><Y>735</Y>
+					<X>240</X><Y>730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4729,13 +4709,13 @@ if (совпадение) {
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>24.996641364934135</X><Y>-0.4097810059825271</Y><Z>0</Z></Point>
-						<Point><X>305</X><Y>-5</Y><Z>0</Z></Point>
-						<Point><X>280.00335863506587</X><Y>-4.590218994017473</Y><Z>0</Z></Point>
-						<Point><X>305</X><Y>20</Y><Z>0</Z></Point>
-						<Point><X>305</X><Y>55</Y><Z>0</Z></Point>
-						<Point><X>305</X><Y>30</Y><Z>0</Z></Point>
-						<Point><X>305</X><Y>80</Y><Z>0</Z></Point>
+						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>55</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>60</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>35</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>85</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5047,11 +5027,11 @@ if (совпадение) {
 					</Width>
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-20.919102497181758</X><Y>13.689088746604131</Y><Z>0</Z></Point>
-						<Point><X>23.350412915198465</X><Y>-8.930745584201402</Y><Z>0</Z></Point>
-						<Point><X>365.3063590011273</X><Y>-139.71736450135836</Y><Z>0</Z></Point>
-						<Point><X>341.9559460859288</X><Y>-130.78661891715697</Y><Z>0</Z></Point>
-						<Point><X>169.1283590011273</X><Y>-27.190364501358367</Y><Z>0</Z></Point>
+						<Point><X>-20.919</X><Y>13.689</Y><Z>0</Z></Point>
+						<Point><X>21.11913699731715</X><Y>-13.378417413451782</Y><Z>0</Z></Point>
+						<Point><X>165.30599999999998</X><Y>-104.71700000000001</Y><Z>0</Z></Point>
+						<Point><X>144.18686300268283</X><Y>-91.33858258654823</Y><Z>0</Z></Point>
+						<Point><X>-30.872000000000014</X><Y>7.809999999999999</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -5065,7 +5045,7 @@ if (совпадение) {
 				<PointNode>
 					<Id>1781808426924</Id>
 					<Name><![CDATA[холодныйЦех]]></Name>
-					<X>850</X><Y>715</Y>
+					<X>650</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5721,9 +5701,9 @@ if (совпадение) {
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-16.724</X><Y>-18.582</Y><Z>0</Z></Point>
-						<Point><X>16.817</X><Y>18.499</Y><Z>0</Z></Point>
+						<Point><X>16.816819849907812</X><Y>18.498501834898594</Y><Z>0</Z></Point>
 						<Point><X>100</X><Y>110</Y><Z>0</Z></Point>
-						<Point><X>83.18318015009218</X><Y>91.50149816510141</Y><Z>0</Z></Point>
+						<Point><X>83.183</X><Y>91.501</Y><Z>0</Z></Point>
 						<Point><X>10</X><Y>10</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
@@ -6460,7 +6440,7 @@ if (совпадение) {
 					</Slope>
 
 					<Width>30</Width>
-					<Height>170</Height>
+					<Height>20</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1781882500463" TargetId="1781807959517">
@@ -6522,7 +6502,7 @@ if (совпадение) {
 				<RectangleNode>
 					<Id>1781812841512</Id>
 					<Name><![CDATA[ОбеденныйЗал]]></Name>
-					<X>-30</X><Y>1000</Y>
+					<X>130</X><Y>1000</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6637,10 +6617,30 @@ if (совпадение) {
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>270</Width>
+					<Width>110</Width>
 					<Height>50</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
+				<PointNode>
+					<Id>1781807779055</Id>
+					<Name><![CDATA[палаты1_2]]></Name>
+					<X>240</X><Y>730</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<FakeNode>false</FakeNode>	
+					<Lock>false</Lock>
+					<Color>-14774017</Color>
+					<Radius>10</Radius>
+					<SpeedLimit>false</SpeedLimit>
+					<SpeedLimitValue Class="UnitValue">
+						<Value Class="Double">10</Value>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</SpeedLimitValue>
+				</PointNode>
 			</Presentation>
 
 					<Z>0</Z>
