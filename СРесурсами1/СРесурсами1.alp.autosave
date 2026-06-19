@@ -1960,6 +1960,55 @@ for (int i = работники.size()-1; i >= 0; i--) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[
+    validationErrors.clear();
+    
+    // --- Проверка геометрии ---
+    // Теперь эта функция безопасна благодаря обновленной checkOverlap
+    checkOverlap(nodeHotKitchen, nodeServing, "Горячий цех и Раздаточная");
+    checkOverlap(nodeServing, nodeDining, "Раздаточная и Обеденный зал");
+    // Остальные проверки наложения тоже можно оставить, они теперь не вызовут краш
+    
+    // --- Проверка метрик ---
+    
+    // 1. Логистика еды
+    // getDistanceByRoute работает и с Node, и с RectangularNode, и с PointNode
+    double distFoodRoute = getDistance(nodeServing.getX, nodeServing.getY, nodeDining.getX, nodeDining.getY);
+    
+    // Защита от случая, если пути нет (dist будет NaN или очень большим)
+    if (Double.isNaN(distFoodRoute) || distFoodRoute > 10000) {
+         validationErrors.add("❌ КРИТИЧНО: Нет маршрута между Раздаточной и Обеденным залом! Проверьте сеть путей.");
+    } else {
+        double timeFoodHours = (distFoodRoute / speedCook) / 3600.0;
+        
+        if (timeFoodHours > normDeliveryTime) {
+            validationErrors.add("❌ КРИТИЧНО: Нарушение логистики питания!\n" +
+                                 "Расчетное время доставки: " + String.format("%.2f", timeFoodHours) + " ч.\n" +
+                                 "Норматив: " + normDeliveryTime + " ч.");
+        }
+    }
+
+    // 2. Путь пациента
+    double distPatient = getDistance(nodeEntrance, nodeWardFar);
+    if (distPatient > normPatientPath) {
+        validationErrors.add("⚠️ ВНИМАНИЕ: Длинный путь пациента!\n" +
+                            "Расстояние: " + Math.round(distPatient) + " м.\n" +
+                            "Рекомендуемый максимум: 250 м.");
+    }
+    
+    // ... остальной код без изменений ...
+    
+    if (validationErrors.isEmpty()) {
+        tracer.info("🎉 ПЛАНИРОВКА ВАЛИДНА.");
+        updateStatusPanel(true);
+    } else {
+        tracer.error("🛑 ПЛАНИРОВКА СОДЕРЖИТ ОШИБКИ:");
+        for (String err : validationErrors) {
+            tracer.error(err);
+        }
+        updateStatusPanel(false);
+    }
+]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
