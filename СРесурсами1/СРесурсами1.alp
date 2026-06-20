@@ -206,7 +206,33 @@ Node nodeServing = раздаточная;
 Node nodeDining = ОбеденныйЗал;
 Node nodeEntrance = вход;
 Node nodeWardFar = палаты3_4;
+
+// Расстояния (в метрах, с учётом коэффициента)
+double времяДоставкиЕды = 0.0;      // расстояние от раздачи до зала
+double путьПациента = 0.0;          // расстояние для маршрута пациента
+double дневнойПробегПовара = 0.0;  // расстояние для пробега персонала
+
+// Статусы валидации (true/false)
+boolean статусЕда = false;
+boolean статусПациент = false;
+boolean статусПерсонал = false;
 ]]></AdditionalClassCode>
+			<StartupCode><![CDATA[// --- ИНИЦИАЛИЗАЦИЯ УЗЛОВ (Выполнить при старте модели) ---
+
+    
+    // Привязываем наши переменные к реальным объектам на схеме
+    nodeHotKitchen = горячийЦех;
+    nodeServing = раздаточная;
+    nodeDining = ОбеденныйЗал;
+    nodeEntrance = вход;
+    nodeWardFar = палаты3_4;
+    
+    traceln("=== УЗЛЫ УСПЕШНО ИНИЦИАЛИЗИРОВАНЫ ===");
+    traceln("Горячий цех: " + (nodeHotKitchen != null ? "OK" : "NULL"));
+    traceln("Раздача: " + (nodeServing != null ? "OK" : "NULL"));
+    traceln("Обеденный зал: " + (nodeDining != null ? "OK" : "NULL"));
+
+]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1775594893261</Id>
@@ -1960,51 +1986,39 @@ for (int i = работники.size()-1; i >= 0; i--) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// 1. Масштаб: 1 единица AnyLogic = 0.01 метра (1 см)
-double scaleFactor = 0.01; 
+					<Body><![CDATA[    traceln("\n=== ЗАПУСК ПРОВЕРКИ МАРШРУТОВ ===");
 
-// 2. Коэффициент коррекции: умножаем итоговое расстояние в метрах на 3
-double correctionCoefficient = 3.0;
+    // 1. Маршрут еды: Раздача -> Обеденный зал
+    // Используем наши переменные-ссылки и универсальную функцию
+    времяДоставкиЕды = getRouteDist(nodeServing, nodeDining);
+    
+    if (времяДоставкиЕды > 0) {
+        traceln("[ЕДА] Путь от раздачи до зала: " + String.format("%.2f", времяДоставкиЕды) + " м");
+    } else {
+        traceln("[ЕДА] Не удалось рассчитать путь (проверьте узлы).");
+    }
 
-// 3. Получаем узлы (убедись, что имена совпадают с именами на схеме!)
-Node nodeServing = раздаточная;      // узел раздачи
-Node nodeDining = ОбеденныйЗал;     // узел обеденного зала
+    // 2. Маршрут пациента: Вход -> Палаты
+    путьПациента = getRouteDist(nodeEntrance, nodeWardFar);
+    
+    if (путьПациента > 0) {
+        traceln("[ПАЦИЕНТ] Путь пациента: " + String.format("%.2f", путьПациента) + " м");
+    } else {
+        traceln("[ПАЦИЕНТ] Не удалось рассчитать путь.");
+    }
 
-// 4. Проверка на null (чтобы не было ошибки, если узел не найден)
-if (nodeServing == null || nodeDining == null) {
-    traceln("ОШИБКА: Узлы не назначены! Проверь имена переменных в свойствах агента Main.");
-    return;
-}
+    // 3. Маршрут персонала: Горячий цех -> Раздача
+    double oneWayStaff = getRouteDist(nodeHotKitchen, nodeServing);
+    
+    if (oneWayStaff > 0) {
+        дневнойПробегПовара = oneWayStaff * 2 * 10; // Пример: 10 рейсов за смену
+        traceln("[ПЕРСОНАЛ] Оценочный пробег повара за смену: " + String.format("%.2f", дневнойПробегПовара) + " м");
+    } else {
+        traceln("[ПЕРСОНАЛ] Не удалось рассчитать путь.");
+    }
+    
+    traceln("=== КОНЕЦ ПРОВЕРКИ ===\n");
 
-// 5. Считаем расстояние в единицах AnyLogic (ОДИН РАЗ!)
-double distanceUnits = Utilities.getDistance(
-    getNodeX(nodeServing), 
-    getNodeY(nodeServing), 
-    getNodeX(nodeDining), 
-    getNodeY(nodeDining)
-);
-
-// 6. Переводим в метры с учётом коэффициента коррекции
-double distanceMeters = distanceUnits * scaleFactor * correctionCoefficient;
-
-// 7. Лимит теперь ставим в МЕТРАХ (с учётом того, что расстояние уже утроено)
-double maxAllowedDistanceMeters = 50.0; 
-
-// 8. Вывод основных результатов в консоль
-traceln("Расстояние в единицах AnyLogic: " + distanceUnits);
-traceln("Расстояние в метрах (с коэффициентом x3): " + distanceMeters + " м");
-
-
-// 10. Выводим гипотенузу (используем УЖЕ ПОСЧИТАННУЮ переменную distanceUnits)
-traceln("Гипотенуза (прямое расстояние): " + distanceUnits + " ед.");
-traceln("----------------------");
-
-// 11. Проверка лимита
-if (distanceMeters > maxAllowedDistanceMeters) {
-    traceln("ПРЕДУПРЕЖДЕНИЕ: Расстояние слишком большое: " + distanceMeters + " м. Лимит: " + maxAllowedDistanceMeters + " м.");
-} else {
-    traceln("Маршрут валиден. Расстояние: " + distanceMeters + " м.");
-}
 ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -2054,6 +2068,45 @@ if (distanceMeters > maxAllowedDistanceMeters) {
         return ((PointNode) n).getY();
     }
     return 0;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1781950840849</Id>
+					<Name><![CDATA[getRouteDist]]></Name>
+					<X>390</X><Y>1170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[nodeA]]></Name>
+						<Type><![CDATA[Node]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[nodeB]]></Name>
+						<Type><![CDATA[Node]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (nodeA == null || nodeB == null) {
+    traceln("ОШИБКА в getRouteDist: Один из узлов равен null! Проверьте инициализацию.");
+    return -1.0;
+}
+
+double scaleFactor = 0.01;          // 1 единица модели = 1 см -> переводим в метры
+double correctionCoefficient = 3.0; // Коэффициент извилистости пути (обход мебели и т.д.)
+
+// ВАЖНО: Используем твои кастомные методы getNodeX и getNodeY
+// Предполагается, что эти методы принимают объект Node и возвращают double
+double x1 = getNodeX(nodeA);
+double y1 = getNodeY(nodeA);
+double x2 = getNodeX(nodeB);
+double y2 = getNodeY(nodeB);
+
+// Расчет расстояния по теореме Пифагора
+double distanceUnits = Utilities.getDistance(x1, y1, x2, y2);
+
+return distanceUnits * scaleFactor * correctionCoefficient;
+]]></Body>
 				</Function>
 			</Functions>
 			<Schedules>
