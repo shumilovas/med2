@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 *************************************************
-	         AnyLogic Project File
-*************************************************
+	         AnyLogic Project File 
+*************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.5.202310311109" AlpVersion="8.8.2"><Model>
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.5.202310311109" AlpVersion="8.8.2">
+<Model>
 	<Id>1775594893252</Id>
 	<Name><![CDATA[СРесурсами1]]></Name>
 	<EngineVersion>6</EngineVersion>
@@ -192,8 +193,6 @@
 			</Option>
 		</OptionList>
 	</OptionLists>
-	<Folders>
-	</Folders>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -284,7 +283,9 @@ boolean статусПерсонал = false;
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -292,7 +293,6 @@ boolean статусПерсонал = false;
 			</EnvironmentProperties>
 			<DatasetsCreationProperties>
 				<AutoCreate>true</AutoCreate>
-					<Id>1775594879995</Id>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1775635200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -414,6 +414,96 @@ boolean статусПерсонал = false;
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
+					<Id>1782000000006</Id>
+					<Name><![CDATA[масштабУтомления]]></Name>
+					<X>470</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[19.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000007</Id>
+					<Name><![CDATA[суммаИндексаВыгорания]]></Name>
+					<X>470</X><Y>615</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000008</Id>
+					<Name><![CDATA[числоЗамеровВыгорания]]></Name>
+					<X>470</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000009</Id>
+					<Name><![CDATA[среднийИндексВыгорания]]></Name>
+					<X>470</X><Y>665</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000004</Id>
+					<Name><![CDATA[суммаДнейВН]]></Name>
+					<X>470</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000005</Id>
+					<Name><![CDATA[днейВНнаРаботникаВГод]]></Name>
+					<X>470</X><Y>555</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
 					<Id>1776342362638</Id>
 					<Name><![CDATA[времяБезРаботника]]></Name>
 					<X>470</X><Y>410</Y>
@@ -499,7 +589,7 @@ boolean статусПерсонал = false;
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[100.00]]></Code>
+							<Code><![CDATA[0.0]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -817,7 +907,7 @@ boolean статусПерсонал = false;
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1781800000020</Id>
-					<Name><![CDATA[рынокПациентов]]></Name>
+					<Name><![CDATA[спросНаПродукцию]]></Name>
 					<X>20</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -828,7 +918,7 @@ boolean статусПерсонал = false;
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[180]]></Code>
+							<Code><![CDATA[540]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1781800000021</Id>
@@ -1574,7 +1664,6 @@ boolean статусПерсонал = false;
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1775594879994</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1774339200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1587,10 +1676,11 @@ boolean статусПерсонал = false;
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (РаботаетЛиСистемаЗдравосохранения==true) 
+					<Action><![CDATA[// Эффект программы (фактор B). Фоновое снижение здоровья — в событии ЕстественноеСнижениеЗдоровья, оно идёт всегда
+if (РаботаетЛиСистемаЗдравосохранения==true) 
 {
     for (int i=0; i<работники.size(); i++)
-        работники.get(i).здоровье = Math.min(работники.get(i).здоровье + 0.2, 2.3);
+        работники.get(i).здоровье = Math.min(работники.get(i).здоровье + 0.02, 2.3); // ДОПУЩЕНИЕ: +0.02 за 800 ч (было +0.2), заменить величиной из литературы
     if (длительностьБолезни>5) длительностьБолезни -=5;
 }]]></Action>
 				</Event>
@@ -1611,7 +1701,6 @@ boolean статусПерсонал = false;
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1775594879993</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1773820800000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1627,6 +1716,8 @@ boolean статусПерсонал = false;
 					<Action><![CDATA[for (int i = 0; i < работники.size(); i++) {
     работники.get(i).здоровье = triangular(0.3, 1.3, 0.8);
     работники.get(i).продуктивность = triangular(0.3, 1.3, 0.8);
+    работники.get(i).базоваяПродуктивность = работники.get(i).продуктивность;
+    работники.get(i).накопленнаяУсталость = uniform(0, 60); // разный стартовый уровень, чтобы выгорание не шло одной волной; ДОПУЩЕНИЕ
     работники.get(i).когдаВзятНаРаботу = -uniform(0, 365);
     
     работники.get(i).уровеньАктивности = 0;
@@ -1721,7 +1812,6 @@ boolean статусПерсонал = false;
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1775594879992</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1774080000000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1747,10 +1837,16 @@ for(int i = 0; i < работники.size(); i++) {
     if (работники.get(i).inState(работники.get(i).заболел)) кБольных++;
     if (работники.get(i).inState(работники.get(i).перегорает)) кВыгоревших++;
 }
+// Выручка = накопленные продажи (порций) x цена порции; продажи ограничены спросом
+суммаВыручки = экономика.насыщениеРынка * 200.0;
+// Дни ВН на одну штатную единицу в год — целевой показатель для калибровки по Tarro (-2.6 дня)
+днейВНнаРаботникаВГод = time() > 30 ? суммаДнейВН / количествоРаботников / (time() / 365.0) : 0;
 // Прирост выручки за цикл (ПОСЛЕ сбора данных)
 выручкаЗаЦикл = суммаВыручки - предыдущаяВыручка;
 предыдущаяВыручка = суммаВыручки;
-бюджетНаЗарплаты = суммаВыручки * 0.001;
+// Бюджет ФОТ в тех же единицах, что зарплата (руб/ч): доля ФОТ x средняя часовая выручка
+double доляФОТ = 0.45; // ДОПУЩЕНИЕ
+бюджетНаЗарплаты = доляФОТ * суммаВыручки / Math.max(time(HOUR), 1.0);
 // Передача данных в агент Экономика
 экономика.суммаВыручки = суммаВыручки;
 экономика.суммаЗарплат = суммаЗарплат;
@@ -1761,6 +1857,10 @@ for(int i = 0; i < работники.size(); i++) {
 if (работники.size() > 0) {
     индексБолезни = (double) кБольных / работники.size();
     индексВыгорания = (double) кВыгоревших / работники.size();
+    if (time() > 180) { // среднее по времени после разгона; цель без программы ~0.15
+        суммаИндексаВыгорания += индексВыгорания; числоЗамеровВыгорания += 1;
+        среднийИндексВыгорания = суммаИндексаВыгорания / числоЗамеровВыгорания;
+    }
     кадроваяНагрузка = 1.0 / Math.max(1.0 - индексВыгорания - индексБолезни, 0.1);
 } else {
     индексБолезни = 0; индексВыгорания = 0; кадроваяНагрузка = 1.0;
@@ -1795,7 +1895,6 @@ ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВ
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<Id>1775594879991</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1774339200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1808,18 +1907,21 @@ ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВ
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (!РаботаетЛиСистемаЗдравосохранения) 
-	{
-	for (int i=0; i<работники.size(); i++)
-		работники.get(i).здоровье = Math.max(работники.get(i).здоровье - 0.05, 0.05);
-	if (длительностьБолезни>5) длительностьБолезни +=1;
-	} else {
-	// Программа здравоохранения: частичный сброс усталости (восстановление)
+					<Action><![CDATA[// Фоновое снижение здоровья — действует ВСЕГДА, с программой и без
+// (иначе программа и даёт эффект, и отменяет фон — эффект считается дважды)
+// ДОПУЩЕНИЕ: -0.005 за 400 ч (~ -0.1 в год); было -0.05 (~ -1.1 в год)
+for (int i=0; i<работники.size(); i++)
+	работники.get(i).здоровье = Math.max(работники.get(i).здоровье - 0.005, 0.05);
+if (длительностьБолезни>5) длительностьБолезни +=1;
+
+// Эффект программы (фактор B) добавляется поверх фона
+if (РаботаетЛиСистемаЗдравосохранения) {
+	// частичный сброс усталости; ДОПУЩЕНИЕ: -0.5 за 400 ч
 	for (int i=0; i<работники.size(); i++) {
-		работники.get(i).накопленнаяУсталость = 
+		работники.get(i).накопленнаяУсталость =
 			Math.max(работники.get(i).накопленнаяУсталость - 0.5, 0);
 	}
-	}]]></Action>
+}]]></Action>
 				</Event>
 				<Event>
 					<Id>1779473638282</Id>
@@ -1838,7 +1940,6 @@ ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВ
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879990</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779523200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1852,7 +1953,7 @@ ROI = суммаЗатратНаПрограммуВсего > 0 ? (суммаВ
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
 					<Action><![CDATA[double бюджетСБуфером = бюджетНаЗарплаты * 0.9;
-double максЗарплата = 7500;
+double максЗарплата = базоваяЗарплата * 1.5; // руб/ч; ДОПУЩЕНИЕ: потолок повышения
 double общаяСуммаЗарплат = 0;
 double средняяЗарплата = 0;
 
@@ -1877,10 +1978,12 @@ for (int i = работники.size()-1; i >= 0; i--) {
             
         } else if (новаяЗарплата > максЗарплата) {
            
+            traceln(String.format("%.1f д: ушёл: повышение выше потолка, зарплата %.0f руб/ч", time(), р.зарплата));
             remove_работники(р);
             задержкаНайма.restartTo(time() + uniform(60, 90));
-        } else if (р.зарплата > 2700) {
+        } else if (р.зарплата >= базоваяЗарплата) { // руб/ч; ДОПУЩЕНИЕ: при отказе в повышении уходят те, кто получает не ниже базовой
             
+            traceln(String.format("%.1f д: ушёл: бюджет не позволил повысить, зарплата %.0f руб/ч", time(), р.зарплата));
             remove_работники(р);
             задержкаНайма.restartTo(time() + uniform(60, 90));
         } else {
@@ -1892,7 +1995,8 @@ for (int i = работники.size()-1; i >= 0; i--) {
              (р.продуктивность < 0.3) && 
              (р.здоровье < 0.4)) {
         
-        remove_работники(р);
+        traceln(String.format("%.1f д: уволен: низкая продуктивность и здоровье, зарплата %.0f руб/ч", time(), р.зарплата));
+            remove_работники(р);
         задержкаНайма.restartTo(time() + uniform(90, 180));
     }
 }]]></Action>
@@ -1914,7 +2018,6 @@ for (int i = работники.size()-1; i >= 0; i--) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879989</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779609600000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -1946,7 +2049,6 @@ for (int i = работники.size()-1; i >= 0; i--) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879988</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779955200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -2132,7 +2234,6 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 					<AllDayExceptionMode>false</AllDayExceptionMode>
 					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
 					<IntervalsQuery>
-						<Id>1775594879987</Id>
 						<TableReference>
 						</TableReference>
 							<StartColumnReference>
@@ -2286,7 +2387,7 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 						<Code><![CDATA[100]]></Code>
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>
+					<InEnvironment>true</InEnvironment>	
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -2314,7 +2415,6 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 					</LocationNameCode>
 					<InitializationType>EMPTY</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879986</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -2349,7 +2449,7 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 						<Code><![CDATA[количествоРаботников]]></Code>
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>
+					<InEnvironment>true</InEnvironment>	
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -2377,7 +2477,6 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 					</LocationNameCode>
 					<InitializationType>EMPTY</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879985</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -2524,7 +2623,6 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 							<Value Class="EntityCodeValue">
 								<IsAgentEntity>true</IsAgentEntity>
 								<EntityEmbeddedObject>
-									<Id>1775594879984</Id>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[сресурсами]]></PackageName>
 										<ClassName><![CDATA[Задание]]></ClassName>
@@ -2573,7 +2671,6 @@ return distanceUnits * scaleFactor * correctionCoefficient;
 									</LocationNameCode>
 									<InitializationType>LOAD_FROM_DATABASE</InitializationType>
 									<InitializationDatabaseTableQuery>
-										<Id>1775594879983</Id>
 										<TableReference>
 										</TableReference>
 									</InitializationDatabaseTableQuery>
@@ -2675,7 +2772,6 @@ else
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879982</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -2796,7 +2892,6 @@ else
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879981</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -2868,7 +2963,6 @@ else
 							<Value Class="EntityCodeValue">
 								<IsAgentEntity>true</IsAgentEntity>
 								<EntityEmbeddedObject>
-									<Id>1775594879980</Id>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[сресурсами]]></PackageName>
 										<ClassName><![CDATA[Работник]]></ClassName>
@@ -2914,7 +3008,6 @@ else
 									</LocationNameCode>
 									<InitializationType>LOAD_FROM_DATABASE</InitializationType>
 									<InitializationDatabaseTableQuery>
-										<Id>1775594879979</Id>
 										<TableReference>
 										</TableReference>
 									</InitializationDatabaseTableQuery>
@@ -3114,7 +3207,8 @@ else
 							<Name><![CDATA[onNewUnit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[unit.здоровье = triangular(0.3, 1.3, 0.8);
-unit.продуктивность = triangular(0.3, 1.3, 0.8);]]></Code>
+unit.продуктивность = triangular(0.3, 1.3, 0.8);
+unit.базоваяПродуктивность = unit.продуктивность;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3167,7 +3261,11 @@ if (!р.текущийПростойАбсентеизм) {
 if (!р.текущийПростойАбсентеизм) {
     send("выздоровел", р);
     р.больничКонец = time();
-    р.суммаБольничных += (р.больничКонец - р.больничНачало) * 24 * р.зарплата * коэффециэнтДляБольничных;
+    double днейБольничного = р.больничКонец - р.больничНачало;
+    суммаДнейВН += днейБольничного; // накопленные дни ВН по всем работникам, включая уволенных
+    // оплата за календарный день = средний дневной заработок: 8 ч x 5/7 (было x24 часа)
+    double начисление = днейБольничного * 8.0 * 5.0 / 7.0 * р.зарплата * коэффециэнтДляБольничных;
+    р.суммаБольничных += начисление;
 } else {
 }
 // Устанавливаем тип СЛЕДУЮЩЕГО простоя — здесь, чтобы repairTime его прочитал
@@ -3217,7 +3315,6 @@ if (!р.текущийПростойАбсентеизм) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879978</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -3252,7 +3349,7 @@ if (!р.текущийПростойАбсентеизм) {
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[agent.назначенноеВремяДэлэйПоДанномуСотруднику / КоличествоЗаданийВНеделюНачеловека]]></Code>
+								<Code><![CDATA[agent.назначенноеВремяДэлэйПоДанномуСотруднику]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
 							</Value>
 						</Parameter>
@@ -3325,7 +3422,6 @@ if (!р.текущийПростойАбсентеизм) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879977</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -3356,9 +3452,9 @@ if (!р.текущийПростойАбсентеизм) {
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[суммаВыручки += 1;
+								<Code><![CDATA[// выручка считается из продаж в агенте Экономика, здесь только выпуск и сырьё
 суммаЗатратНаСырьё += стоимостьСырьяНаЕдиницу;
-экономика.объёмСклада += 1;]]></Code>
+экономика.объёмСклада += 150; // порций в задании]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3397,7 +3493,6 @@ if (!р.текущийПростойАбсентеизм) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879976</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -3574,9 +3669,13 @@ if (!р.текущийПростойАбсентеизм) {
 							<Value Class="CodeValue">
 								<Code><![CDATA[Работник работник = (Работник)unit;
 
-// базовое время выполнения
+// базовое время выполнения, ч. Калибровка под загрузку ~80%:
+// при 0.0886 прогон на 250 дней дал загрузку ~100% (выполнено 92% заданий, очередь росла);
+// 0.0886 x 0.74 = 0.066 -> ~80%. ДОПУЩЕНИЕ, подобрано под загрузку, не норматив;
+// пересчитать после удаления психотипов (уйдёт их средний множитель ~1.18)
+// здоровье отдельно не делим: оно уже входит в продуктивность
 agent.назначенноеВремяДэлэйПоДанномуСотруднику = Math.max(
-    0.105 * agent.сложность / (Math.max(работник.продуктивность, 0.01) * Math.max(работник.здоровье, 0.01)),
+    0.066 * agent.сложность / Math.max(работник.продуктивность, 0.01),
     0.1);
 
 // совпадение психотипа с типом задания
@@ -3588,11 +3687,11 @@ boolean совпадение =
 
 if (совпадение) {
     agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 0.7; // быстрее
-    работник.накопленнаяУсталость -= 0.05; // усталость снижается
+    работник.накопленнаяУсталость -= 0.0; // психотипы: влияние на усталость выключено (было -0.05)
     работник.накопленнаяУсталость = Math.max(работник.накопленнаяУсталость, 0);
 } else {
     agent.назначенноеВремяДэлэйПоДанномуСотруднику *= 1.3; // медленнее
-    работник.накопленнаяУсталость += 0.1; // усталость растёт
+    работник.накопленнаяУсталость += 0.0; // психотипы: влияние на усталость выключено (было +0.1)
 }
 ]]></Code>
 							</Value>
@@ -3651,7 +3750,6 @@ if (совпадение) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879975</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -3719,7 +3817,7 @@ if (совпадение) {
 							<Name><![CDATA[onReleaseUnit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[agent.выручкаЗаЗадание = 150 * 200.0; // 150 порций * 200 руб за смену
-суммаВыручки += agent.выручкаЗаЗадание;]]></Code>
+// выручка больше не начисляется по заданию: она = продажи x цена (агент Экономика)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3761,7 +3859,6 @@ if (совпадение) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879974</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -3898,34 +3995,7 @@ if (совпадение) {
 							<Name><![CDATA[taskTravelTo]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[moveBeforeDowntime]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationType]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationNode]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationEntity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationAttractor]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationX]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationY]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[downtimeDestinationZ]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onDowntimeTriggered]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onTerminateCallback]]></Name>
+							<Name><![CDATA[onTerminate]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3960,7 +4030,6 @@ if (совпадение) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879973</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4006,7 +4075,7 @@ if (совпадение) {
 						<Code><![CDATA[100]]></Code>
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InEnvironment>true</InEnvironment>
+					<InEnvironment>true</InEnvironment>	
 					<InitialLocationType>XYZ</InitialLocationType>
 					<XCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -4034,7 +4103,6 @@ if (совпадение) {
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1775594879972</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4169,18 +4237,32 @@ if (совпадение) {
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</ColumnCode>
 					<RowCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1781811858443</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4312,18 +4394,32 @@ if (совпадение) {
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</ColumnCode>
 					<RowCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1781811912832</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4367,6 +4463,9 @@ if (совпадение) {
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocation]]></Name>
@@ -4399,18 +4498,32 @@ if (совпадение) {
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</ColumnCode>
 					<RowCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1781812345922</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4500,18 +4613,32 @@ if (совпадение) {
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</ColumnCode>
 					<RowCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
 					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
-						<Id>1781812808007</Id>
 						<TableReference>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
@@ -4569,6 +4696,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -4587,6 +4715,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -5273,7 +5402,6 @@ if (совпадение) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<EmbeddedObject>
-						<Id>1781812620228</Id>
 						<ActiveObjectClass>
 							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
 							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
@@ -5338,18 +5466,32 @@ if (совпадение) {
 						</Replication>
 						<CollectionType>ARRAY_LIST_BASED</CollectionType>
 						<InitialLocationType>XYZ</InitialLocationType>
+						<XCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</XCode>
+						<YCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</YCode>
+						<ZCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ZCode>
 						<ColumnCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</ColumnCode>
 						<RowCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</RowCode>
+						<LatitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LatitudeCode>
+						<LongitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LongitudeCode>
 						<LocationNameCode Class="CodeValue">
 							<Code><![CDATA[""]]></Code>
 						</LocationNameCode>
 						<InitializationType>SPECIFIED_NUMBER</InitializationType>
 						<InitializationDatabaseTableQuery>
-							<Id>1781812620227</Id>
 							<TableReference>
 							</TableReference>
 						</InitializationDatabaseTableQuery>
@@ -5369,7 +5511,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870821</Id>
 					<Name><![CDATA[attractor10]]></Name>
-					<X>392.85714285714283</X><Y>913.3333333333334</Y>
+					<X>12.8571428571</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5381,7 +5523,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870824</Id>
 					<Name><![CDATA[attractor11]]></Name>
-					<X>405.7142857142857</X><Y>913.3333333333334</Y>
+					<X>25.7142857143</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5393,7 +5535,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870827</Id>
 					<Name><![CDATA[attractor12]]></Name>
-					<X>418.57142857142856</X><Y>913.3333333333334</Y>
+					<X>38.5714285714</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5405,7 +5547,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870830</Id>
 					<Name><![CDATA[attractor13]]></Name>
-					<X>431.42857142857144</X><Y>913.3333333333334</Y>
+					<X>51.4285714286</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5417,7 +5559,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870833</Id>
 					<Name><![CDATA[attractor14]]></Name>
-					<X>444.2857142857143</X><Y>913.3333333333334</Y>
+					<X>64.2857142857</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5429,7 +5571,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870836</Id>
 					<Name><![CDATA[attractor15]]></Name>
-					<X>457.14285714285717</X><Y>913.3333333333334</Y>
+					<X>77.1428571429</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5441,7 +5583,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870839</Id>
 					<Name><![CDATA[attractor16]]></Name>
-					<X>392.85714285714283</X><Y>926.6666666666666</Y>
+					<X>12.8571428571</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5453,7 +5595,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870842</Id>
 					<Name><![CDATA[attractor17]]></Name>
-					<X>405.7142857142857</X><Y>926.6666666666666</Y>
+					<X>25.7142857143</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5465,7 +5607,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870845</Id>
 					<Name><![CDATA[attractor18]]></Name>
-					<X>418.57142857142856</X><Y>926.6666666666666</Y>
+					<X>38.5714285714</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5477,7 +5619,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870848</Id>
 					<Name><![CDATA[attractor19]]></Name>
-					<X>431.42857142857144</X><Y>926.6666666666666</Y>
+					<X>51.4285714286</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5489,7 +5631,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870851</Id>
 					<Name><![CDATA[attractor20]]></Name>
-					<X>444.2857142857143</X><Y>926.6666666666666</Y>
+					<X>64.2857142857</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5501,7 +5643,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870854</Id>
 					<Name><![CDATA[attractor21]]></Name>
-					<X>457.14285714285717</X><Y>926.6666666666666</Y>
+					<X>77.1428571429</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5513,7 +5655,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870857</Id>
 					<Name><![CDATA[attractor22]]></Name>
-					<X>392.85714285714283</X><Y>940</Y>
+					<X>12.8571428571</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5525,7 +5667,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870860</Id>
 					<Name><![CDATA[attractor23]]></Name>
-					<X>405.7142857142857</X><Y>940</Y>
+					<X>25.7142857143</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5537,7 +5679,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870863</Id>
 					<Name><![CDATA[attractor24]]></Name>
-					<X>418.57142857142856</X><Y>940</Y>
+					<X>38.5714285714</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5549,7 +5691,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870866</Id>
 					<Name><![CDATA[attractor25]]></Name>
-					<X>431.42857142857144</X><Y>940</Y>
+					<X>51.4285714286</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5561,7 +5703,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870869</Id>
 					<Name><![CDATA[attractor26]]></Name>
-					<X>444.2857142857143</X><Y>940</Y>
+					<X>64.2857142857</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5573,7 +5715,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870872</Id>
 					<Name><![CDATA[attractor27]]></Name>
-					<X>457.14285714285717</X><Y>940</Y>
+					<X>77.1428571429</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5585,7 +5727,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870875</Id>
 					<Name><![CDATA[attractor28]]></Name>
-					<X>392.85714285714283</X><Y>953.3333333333334</Y>
+					<X>12.8571428571</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5597,7 +5739,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870878</Id>
 					<Name><![CDATA[attractor29]]></Name>
-					<X>405.7142857142857</X><Y>953.3333333333334</Y>
+					<X>25.7142857143</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5609,7 +5751,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870881</Id>
 					<Name><![CDATA[attractor30]]></Name>
-					<X>418.57142857142856</X><Y>953.3333333333334</Y>
+					<X>38.5714285714</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5621,7 +5763,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870884</Id>
 					<Name><![CDATA[attractor31]]></Name>
-					<X>431.42857142857144</X><Y>953.3333333333334</Y>
+					<X>51.4285714286</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5633,7 +5775,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870887</Id>
 					<Name><![CDATA[attractor32]]></Name>
-					<X>444.2857142857143</X><Y>953.3333333333334</Y>
+					<X>64.2857142857</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5645,7 +5787,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870890</Id>
 					<Name><![CDATA[attractor33]]></Name>
-					<X>457.14285714285717</X><Y>953.3333333333334</Y>
+					<X>77.1428571429</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5657,7 +5799,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870893</Id>
 					<Name><![CDATA[attractor34]]></Name>
-					<X>392.85714285714283</X><Y>966.6666666666666</Y>
+					<X>12.8571428571</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5669,7 +5811,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870896</Id>
 					<Name><![CDATA[attractor35]]></Name>
-					<X>405.7142857142857</X><Y>966.6666666666666</Y>
+					<X>25.7142857143</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5681,7 +5823,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870899</Id>
 					<Name><![CDATA[attractor36]]></Name>
-					<X>418.57142857142856</X><Y>966.6666666666666</Y>
+					<X>38.5714285714</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5693,7 +5835,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870902</Id>
 					<Name><![CDATA[attractor37]]></Name>
-					<X>431.42857142857144</X><Y>966.6666666666666</Y>
+					<X>51.4285714286</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5705,7 +5847,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870905</Id>
 					<Name><![CDATA[attractor38]]></Name>
-					<X>444.2857142857143</X><Y>966.6666666666666</Y>
+					<X>64.2857142857</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5717,7 +5859,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813870908</Id>
 					<Name><![CDATA[attractor39]]></Name>
-					<X>457.14285714285717</X><Y>966.6666666666666</Y>
+					<X>77.1428571429</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5795,7 +5937,6 @@ if (совпадение) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<EmbeddedObject>
-						<Id>1781813907208</Id>
 						<ActiveObjectClass>
 							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
 							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
@@ -5860,18 +6001,32 @@ if (совпадение) {
 						</Replication>
 						<CollectionType>ARRAY_LIST_BASED</CollectionType>
 						<InitialLocationType>XYZ</InitialLocationType>
+						<XCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</XCode>
+						<YCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</YCode>
+						<ZCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ZCode>
 						<ColumnCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</ColumnCode>
 						<RowCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</RowCode>
+						<LatitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LatitudeCode>
+						<LongitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LongitudeCode>
 						<LocationNameCode Class="CodeValue">
 							<Code><![CDATA[""]]></Code>
 						</LocationNameCode>
 						<InitializationType>SPECIFIED_NUMBER</InitializationType>
 						<InitializationDatabaseTableQuery>
-							<Id>1781813907207</Id>
 							<TableReference>
 							</TableReference>
 						</InitializationDatabaseTableQuery>
@@ -5891,7 +6046,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920889</Id>
 					<Name><![CDATA[attractor]]></Name>
-					<X>405.55555555555554</X><Y>733.3333333333334</Y>
+					<X>15.5555555556</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5903,7 +6058,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920892</Id>
 					<Name><![CDATA[attractor1]]></Name>
-					<X>421.1111111111111</X><Y>733.3333333333334</Y>
+					<X>31.1111111111</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5915,7 +6070,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920895</Id>
 					<Name><![CDATA[attractor2]]></Name>
-					<X>436.6666666666667</X><Y>733.3333333333334</Y>
+					<X>46.6666666667</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5927,7 +6082,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920898</Id>
 					<Name><![CDATA[attractor3]]></Name>
-					<X>452.22222222222223</X><Y>733.3333333333334</Y>
+					<X>62.2222222222</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5939,7 +6094,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920901</Id>
 					<Name><![CDATA[attractor4]]></Name>
-					<X>467.77777777777777</X><Y>733.3333333333334</Y>
+					<X>77.7777777778</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5951,7 +6106,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920904</Id>
 					<Name><![CDATA[attractor5]]></Name>
-					<X>483.3333333333333</X><Y>733.3333333333334</Y>
+					<X>93.3333333333</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5963,7 +6118,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920907</Id>
 					<Name><![CDATA[attractor6]]></Name>
-					<X>498.8888888888889</X><Y>733.3333333333334</Y>
+					<X>108.8888888889</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5975,7 +6130,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920910</Id>
 					<Name><![CDATA[attractor7]]></Name>
-					<X>514.4444444444445</X><Y>733.3333333333334</Y>
+					<X>124.4444444444</X><Y>13.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5987,7 +6142,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920913</Id>
 					<Name><![CDATA[attractor8]]></Name>
-					<X>405.55555555555554</X><Y>746.6666666666666</Y>
+					<X>15.5555555556</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5999,7 +6154,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920916</Id>
 					<Name><![CDATA[attractor9]]></Name>
-					<X>421.1111111111111</X><Y>746.6666666666666</Y>
+					<X>31.1111111111</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6011,7 +6166,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920919</Id>
 					<Name><![CDATA[attractor40]]></Name>
-					<X>436.6666666666667</X><Y>746.6666666666666</Y>
+					<X>46.6666666667</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6023,7 +6178,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920922</Id>
 					<Name><![CDATA[attractor41]]></Name>
-					<X>452.22222222222223</X><Y>746.6666666666666</Y>
+					<X>62.2222222222</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6035,7 +6190,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920925</Id>
 					<Name><![CDATA[attractor42]]></Name>
-					<X>467.77777777777777</X><Y>746.6666666666666</Y>
+					<X>77.7777777778</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6047,7 +6202,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920928</Id>
 					<Name><![CDATA[attractor43]]></Name>
-					<X>483.3333333333333</X><Y>746.6666666666666</Y>
+					<X>93.3333333333</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6059,7 +6214,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920931</Id>
 					<Name><![CDATA[attractor44]]></Name>
-					<X>498.8888888888889</X><Y>746.6666666666666</Y>
+					<X>108.8888888889</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6071,7 +6226,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920934</Id>
 					<Name><![CDATA[attractor45]]></Name>
-					<X>514.4444444444445</X><Y>746.6666666666666</Y>
+					<X>124.4444444444</X><Y>26.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6083,7 +6238,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920937</Id>
 					<Name><![CDATA[attractor46]]></Name>
-					<X>405.55555555555554</X><Y>760</Y>
+					<X>15.5555555556</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6095,7 +6250,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920940</Id>
 					<Name><![CDATA[attractor47]]></Name>
-					<X>421.1111111111111</X><Y>760</Y>
+					<X>31.1111111111</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6107,7 +6262,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920943</Id>
 					<Name><![CDATA[attractor48]]></Name>
-					<X>436.6666666666667</X><Y>760</Y>
+					<X>46.6666666667</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6119,7 +6274,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920946</Id>
 					<Name><![CDATA[attractor49]]></Name>
-					<X>452.22222222222223</X><Y>760</Y>
+					<X>62.2222222222</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6131,7 +6286,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920949</Id>
 					<Name><![CDATA[attractor50]]></Name>
-					<X>467.77777777777777</X><Y>760</Y>
+					<X>77.7777777778</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6143,7 +6298,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920952</Id>
 					<Name><![CDATA[attractor51]]></Name>
-					<X>483.3333333333333</X><Y>760</Y>
+					<X>93.3333333333</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6155,7 +6310,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920955</Id>
 					<Name><![CDATA[attractor52]]></Name>
-					<X>498.8888888888889</X><Y>760</Y>
+					<X>108.8888888889</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6167,7 +6322,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920958</Id>
 					<Name><![CDATA[attractor53]]></Name>
-					<X>514.4444444444445</X><Y>760</Y>
+					<X>124.4444444444</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6179,7 +6334,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920961</Id>
 					<Name><![CDATA[attractor54]]></Name>
-					<X>405.55555555555554</X><Y>773.3333333333334</Y>
+					<X>15.5555555556</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6191,7 +6346,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920964</Id>
 					<Name><![CDATA[attractor55]]></Name>
-					<X>421.1111111111111</X><Y>773.3333333333334</Y>
+					<X>31.1111111111</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6203,7 +6358,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920967</Id>
 					<Name><![CDATA[attractor56]]></Name>
-					<X>436.6666666666667</X><Y>773.3333333333334</Y>
+					<X>46.6666666667</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6215,7 +6370,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920970</Id>
 					<Name><![CDATA[attractor57]]></Name>
-					<X>452.22222222222223</X><Y>773.3333333333334</Y>
+					<X>62.2222222222</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6227,7 +6382,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920973</Id>
 					<Name><![CDATA[attractor58]]></Name>
-					<X>467.77777777777777</X><Y>773.3333333333334</Y>
+					<X>77.7777777778</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6239,7 +6394,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920976</Id>
 					<Name><![CDATA[attractor59]]></Name>
-					<X>483.3333333333333</X><Y>773.3333333333334</Y>
+					<X>93.3333333333</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6251,7 +6406,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920979</Id>
 					<Name><![CDATA[attractor60]]></Name>
-					<X>498.8888888888889</X><Y>773.3333333333334</Y>
+					<X>108.8888888889</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6263,7 +6418,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920982</Id>
 					<Name><![CDATA[attractor61]]></Name>
-					<X>514.4444444444445</X><Y>773.3333333333334</Y>
+					<X>124.4444444444</X><Y>53.3333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6275,7 +6430,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920985</Id>
 					<Name><![CDATA[attractor62]]></Name>
-					<X>405.55555555555554</X><Y>786.6666666666666</Y>
+					<X>15.5555555556</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6287,7 +6442,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920988</Id>
 					<Name><![CDATA[attractor63]]></Name>
-					<X>421.1111111111111</X><Y>786.6666666666666</Y>
+					<X>31.1111111111</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6299,7 +6454,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920991</Id>
 					<Name><![CDATA[attractor64]]></Name>
-					<X>436.6666666666667</X><Y>786.6666666666666</Y>
+					<X>46.6666666667</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6311,7 +6466,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920994</Id>
 					<Name><![CDATA[attractor65]]></Name>
-					<X>452.22222222222223</X><Y>786.6666666666666</Y>
+					<X>62.2222222222</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6323,7 +6478,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813920997</Id>
 					<Name><![CDATA[attractor66]]></Name>
-					<X>467.77777777777777</X><Y>786.6666666666666</Y>
+					<X>77.7777777778</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6335,7 +6490,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813921000</Id>
 					<Name><![CDATA[attractor67]]></Name>
-					<X>483.3333333333333</X><Y>786.6666666666666</Y>
+					<X>93.3333333333</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6347,7 +6502,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813921003</Id>
 					<Name><![CDATA[attractor68]]></Name>
-					<X>498.8888888888889</X><Y>786.6666666666666</Y>
+					<X>108.8888888889</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6359,7 +6514,7 @@ if (совпадение) {
 				<Attractor>
 					<Id>1781813921006</Id>
 					<Name><![CDATA[attractor69]]></Name>
-					<X>514.4444444444445</X><Y>786.6666666666666</Y>
+					<X>124.4444444444</X><Y>66.6666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6401,7 +6556,6 @@ if (совпадение) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<EmbeddedObject>
-						<Id>1781882500462</Id>
 						<ActiveObjectClass>
 							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
 							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
@@ -6466,18 +6620,32 @@ if (совпадение) {
 						</Replication>
 						<CollectionType>ARRAY_LIST_BASED</CollectionType>
 						<InitialLocationType>XYZ</InitialLocationType>
+						<XCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</XCode>
+						<YCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</YCode>
+						<ZCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ZCode>
 						<ColumnCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</ColumnCode>
 						<RowCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</RowCode>
+						<LatitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LatitudeCode>
+						<LongitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LongitudeCode>
 						<LocationNameCode Class="CodeValue">
 							<Code><![CDATA[""]]></Code>
 						</LocationNameCode>
 						<InitializationType>SPECIFIED_NUMBER</InitializationType>
 						<InitializationDatabaseTableQuery>
-							<Id>1781882500461</Id>
 							<TableReference>
 							</TableReference>
 						</InitializationDatabaseTableQuery>
@@ -6579,7 +6747,6 @@ if (совпадение) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<EmbeddedObject>
-						<Id>1781812841511</Id>
 						<ActiveObjectClass>
 							<PackageName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></PackageName>
 							<ClassName><![CDATA[AreaNodeDescriptor]]></ClassName>
@@ -6644,18 +6811,32 @@ if (совпадение) {
 						</Replication>
 						<CollectionType>ARRAY_LIST_BASED</CollectionType>
 						<InitialLocationType>XYZ</InitialLocationType>
+						<XCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</XCode>
+						<YCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</YCode>
+						<ZCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</ZCode>
 						<ColumnCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</ColumnCode>
 						<RowCode Class="CodeValue">
 							<Code><![CDATA[0]]></Code>
 						</RowCode>
+						<LatitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LatitudeCode>
+						<LongitudeCode Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</LongitudeCode>
 						<LocationNameCode Class="CodeValue">
 							<Code><![CDATA[""]]></Code>
 						</LocationNameCode>
 						<InitializationType>SPECIFIED_NUMBER</InitializationType>
 						<InitializationDatabaseTableQuery>
-							<Id>1781812841510</Id>
 							<TableReference>
 							</TableReference>
 						</InitializationDatabaseTableQuery>
@@ -6726,6 +6907,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6744,6 +6926,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6762,6 +6945,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6780,6 +6964,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6798,6 +6983,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6816,6 +7002,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -6834,6 +7021,7 @@ if (совпадение) {
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
+					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -7009,7 +7197,9 @@ if (совпадение) {
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -7017,7 +7207,6 @@ if (совпадение) {
 			</EnvironmentProperties>
 			<DatasetsCreationProperties>
 				<AutoCreate>true</AutoCreate>
-					<Id>1775594879971</Id>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1773734400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -7199,7 +7388,7 @@ if (совпадение) {
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-</Figure3D>
+				</Figure3D>
 				<Figure3D>
 					<Id>1781812022721</Id>
 					<Name><![CDATA[bottle_1]]></Name>
@@ -7240,7 +7429,7 @@ if (совпадение) {
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-</Figure3D>
+				</Figure3D>
 				<RoundedRectangle>
 					<Id>1781812453312</Id>
 					<Name><![CDATA[roundRectangle]]></Name>
@@ -7326,7 +7515,9 @@ if (совпадение) {
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -7334,7 +7525,6 @@ if (совпадение) {
 			</EnvironmentProperties>
 			<DatasetsCreationProperties>
 				<AutoCreate>true</AutoCreate>
-					<Id>1775594879970</Id>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1773734400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -7370,6 +7560,22 @@ if (совпадение) {
 					<Name><![CDATA[продуктивность]]></Name>
 					<Description><![CDATA[один стандартный час за час]]></Description>
 					<X>50</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1782000000003</Id>
+					<Name><![CDATA[базоваяПродуктивность]]></Name>
+					<Description><![CDATA[продуктивность при найме; текущая считается от неё и от состояния]]></Description>
+					<X>50</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7954,7 +8160,6 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879969</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779523200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -7969,7 +8174,8 @@ if (совпадение) {
 					</Properties>
 					<Action><![CDATA[if (!inState(заболел) && main.расписаниеПерерывов.getValue() == false && накопленнаяУсталость < 101) {
     суммаЗарплат += зарплата;
-    накопленнаяУсталость += 0.003*коэффициентУтомления * main.кадроваяНагрузка;
+    // масштабУтомления (Main) подбирается так, чтобы без программы выгорало ~15%; ДОПУЩЕНИЕ
+    накопленнаяУсталость += 0.003*коэффициентУтомления * main.кадроваяНагрузка * main.масштабУтомления;
     
     накопленнаяУсталость = Math.max(накопленнаяУсталость - 0.0005, 0);
 }
@@ -7992,7 +8198,6 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879968</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779955200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -8032,7 +8237,6 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879967</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779955200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -8045,16 +8249,16 @@ if (совпадение) {
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[if (накопленнаяУсталость > 25) {
-    double доляПотерьОтБолезней = (суммаЗарплат > 0)
-        ? Math.min(суммаБольничных / суммаЗарплат, 0.5)
-        : 0;
-    double новаяПродуктивность = продуктивность
-        * (1 - накопленнаяУсталость / 100)
-        * здоровье
-        * (1 - доляПотерьОтБолезней);
-    продуктивность = Math.max(новаяПродуктивность, 0.05);
-}]]></Action>
+					<Action><![CDATA[// Продуктивность считается от ТЕКУЩЕГО состояния, а не накопительно:
+// при снижении усталости и восстановлении здоровья работник восстанавливается
+double доляПотерьОтБолезней = (суммаЗарплат > 0)
+    ? Math.min(суммаБольничных / суммаЗарплат, 0.5)
+    : 0;
+double новаяПродуктивность = базоваяПродуктивность
+    * Math.max(1 - накопленнаяУсталость / 100, 0)
+    * Math.min(здоровье, 1.0)
+    * (1 - доляПотерьОтБолезней);
+продуктивность = Math.max(новаяПродуктивность, 0.05);]]></Action>
 				</Event>
 				<Event>
 					<Id>1779903991614</Id>
@@ -8073,7 +8277,6 @@ if (совпадение) {
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
-						<Id>1775594879966</Id>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1779955200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
@@ -8096,10 +8299,11 @@ if (совпадение) {
         }
 
         // Влияние усталости на здоровье (нижняя граница 0.05)
-        if (накопленнаяУсталость > 20) {
-            здоровье = Math.max(здоровье - 0.5, 0.05);
-        } else if (накопленнаяУсталость > 15) {
-            здоровье = Math.max(здоровье - 0.2, 0.05);
+        // плавная зависимость вместо обрыва -0.2/-0.5 за 10 дней:
+        // выше порога 15 здоровье снижается пропорционально превышению
+        // ДОПУЩЕНИЕ: 0.002 за единицу превышения за 10 дней (при усталости 20 ~ -0.37 в год)
+        if (накопленнаяУсталость > 15) {
+            здоровье = Math.max(здоровье - 0.002 * (накопленнаяУсталость - 15), 0.05);
         }]]></Action>
 				</Event>
 			</Events>
@@ -8226,7 +8430,7 @@ if (совпадение) {
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-</Figure3D>
+				</Figure3D>
 			</Presentation>
 
 				</Level>
@@ -8289,7 +8493,9 @@ if (совпадение) {
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -8297,7 +8503,6 @@ if (совпадение) {
 			</EnvironmentProperties>
 			<DatasetsCreationProperties>
 				<AutoCreate>true</AutoCreate>
-					<Id>1775594879965</Id>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1781596800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -8537,7 +8742,7 @@ if (совпадение) {
 					<EquationStyle>classic</EquationStyle>
 					<Width>20</Width>
 					<Height>20</Height>
-						<InitialValue><![CDATA[(double)main.рынокПациентов]]></InitialValue>
+						<InitialValue><![CDATA[(double)main.спросНаПродукцию]]></InitialValue>
 						<Color>-4073239</Color>
 					</Properties>
 				</Variable>
@@ -8604,7 +8809,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties TargetId="1781529392255" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 ? суммаВыручки / time(DAY) : 0]]></Formula>
+						<Formula><![CDATA[продажи * 200.0 /* руб за порцию; ДОПУЩЕНИЕ */]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -8643,7 +8848,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781546421389" TargetId="1781529451647" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[time(DAY) > 0 ? объёмСклада / time(DAY) : 0]]></Formula>
+						<Formula><![CDATA[0 /* производство поступает дискретно: Sink добавляет порции при завершении задания */]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -8662,7 +8867,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781546566744" TargetId="1781546421389" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[рынок * 5]]></Formula>
+						<Formula><![CDATA[рынок * 5.0 /* спрос, порций в день: пациенты x 5 порций; ДОПУЩЕНИЕ */]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -8700,7 +8905,7 @@ if (совпадение) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1781529451647" TargetId="1781548429553" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[Math.min(спрос, скоростьПроизводства)]]></Formula>
+						<Formula><![CDATA[Math.min(спрос, объёмСклада / 1.0) /* реализация за 1 день; ДОПУЩЕНИЕ */]]></Formula>
 						<Color>-4073239</Color>
 						<ValveIndex>1</ValveIndex>
 						<Points>
@@ -8855,13 +9060,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781537000001" TargetId="1781529490205" Polarity="null">
+				<Link SourceId="1781548412164" TargetId="1781529490205" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
 					<Direction><X>-60</X><Y>95</Y></Direction>
 					<Id>1781537460315</Id>
-					<Name><![CDATA[суммаВыручки - потокДохода]]></Name>
-					<X>350</X><Y>230</Y>
+					<Name><![CDATA[продажи - потокДохода]]></Name>
+					<X>410</X><Y>320</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8870,13 +9075,13 @@ if (совпадение) {
 					<LineWidth>1</LineWidth>
 					<Delay>false</Delay>
 				</Link>
-				<Link SourceId="1781546447661" TargetId="1781548412164" Polarity="null">
+				<Link SourceId="1781529451647" TargetId="1781548412164" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
 					<Direction><X>-175</X><Y>-40</Y></Direction>
 					<Id>1781549234223</Id>
-					<Name><![CDATA[скоростьПроизводства - продажи]]></Name>
-					<X>520</X><Y>360</Y>
+					<Name><![CDATA[объёмСклада - продажи]]></Name>
+					<X>410</X><Y>320</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8937,21 +9142,6 @@ if (совпадение) {
 					<Id>1781560787818</Id>
 					<Name><![CDATA[спрос - parскоростьПополненияРынкаВдень]]></Name>
 					<X>605</X><Y>265</Y>
-					<Label><X>40</X><Y>-50</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<Color>-11832691</Color>
-					<LineWidth>1</LineWidth>
-					<Delay>false</Delay>
-				</Link>
-				<Link SourceId="1781529451647" TargetId="1781546447661" Polarity="null">
-					<Height>20.0</Height>
-					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>110</X><Y>40</Y></Direction>
-					<Id>1781561653143</Id>
-					<Name><![CDATA[объёмСклада - скоростьПроизводства]]></Name>
-					<X>410</X><Y>320</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9062,7 +9252,7 @@ if (совпадение) {
 			</Presentation>
 
 		</ActiveObjectClass>
-	</ActiveObjectClasses>
+	</ActiveObjectClasses>	
 	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
 	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
@@ -9070,14 +9260,11 @@ if (совпадение) {
 	<FixedTimeStep>0.001</FixedTimeStep>
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
-	<InspectionWindowColorTheme>DEFAULT</InspectionWindowColorTheme>
 	<Frame>
-		<Id>1775594879996</Id>
 		<Width>1000</Width>
 		<Height>600</Height>
 	</Frame>
 	<Database>
-		<Id>1775594879964</Id>
 		<Logging>false</Logging>
 		<AutoExport>false</AutoExport>
 		<ShutdownCompact>false</ShutdownCompact>
@@ -9086,7 +9273,7 @@ if (совпадение) {
 		<ExportSettings>
 		</ExportSettings>
 	</Database>
-
+	
 	<RunConfiguration ActiveObjectClassId="1775594893255">
 		<Id>1775594893267</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
@@ -9111,7 +9298,7 @@ if (совпадение) {
 		<Outputs>
 		</Outputs>
 	</RunConfiguration>
-	<Experiments>
+	<Experiments>	
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1775594893255">
 			<Id>1775594893264</Id>
@@ -9247,7 +9434,7 @@ if (совпадение) {
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1781727859580</Id>
-					<Name><![CDATA[рынокПациентов]]></Name>
+					<Name><![CDATA[спросНаПродукцию]]></Name>
 					<X>50</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -9256,7 +9443,7 @@ if (совпадение) {
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[180]]></Code>
+							<Code><![CDATA[540]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -9282,7 +9469,7 @@ if (совпадение) {
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[1]]></MinValue>
 						<MaxValue><![CDATA[10000]]></MaxValue>
-						<Step><![CDATA[5]]></Step>
+						<Step><![CDATA[1]]></Step>
 						<LinkTo>true</LinkTo>
 						<Link>КоличествоРаботников</Link>
 					</ExtendedProperties>
@@ -9306,7 +9493,7 @@ if (совпадение) {
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[1]]></MinValue>
 						<MaxValue><![CDATA[10000]]></MaxValue>
-						<Step><![CDATA[5]]></Step>
+						<Step><![CDATA[1]]></Step>
 						<LinkTo>true</LinkTo>
 						<Link>КоличествоРаботников1</Link>
 					</ExtendedProperties>
@@ -9451,7 +9638,7 @@ if (совпадение) {
 				<Control Type="Slider">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1781900000001</Id>
-					<Name><![CDATA[slidРынокПациентов]]></Name>
+					<Name><![CDATA[slidСпросНаПродукцию]]></Name>
 					<X>190</X><Y>430</Y>
 					<Label><X>0</X><Y>-14</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -9463,17 +9650,17 @@ if (совпадение) {
 						<Enabled>true</Enabled>
 					</BasicProperties>
 					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[180]]></DefaultValueCode>
+						<DefaultValueCode><![CDATA[540]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[50]]></MinValue>
 						<MaxValue><![CDATA[600]]></MaxValue>
 						<LinkTo>true</LinkTo>
-						<Link>рынокПациентов</Link>
+						<Link>спросНаПродукцию</Link>
 					</ExtendedProperties>
 				</Control>
 			</Presentation>
 
-			<Parameters>
+			<Parameters>			
 				<Parameter>
 					<ParameterName><![CDATA[количествоРаботников]]></ParameterName>
 					<ParameterValue Class="CodeValue">
@@ -9481,9 +9668,9 @@ if (совпадение) {
 					</ParameterValue>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[рынокПациентов]]></ParameterName>
+					<ParameterName><![CDATA[спросНаПродукцию]]></ParameterName>
 					<ParameterValue Class="CodeValue">
-						<Code><![CDATA[рынокПациентов]]></Code>
+						<Code><![CDATA[спросНаПродукцию]]></Code>
 					</ParameterValue>
 				</Parameter>
 				<Parameter>
@@ -9549,46 +9736,42 @@ if (совпадение) {
 				<Parameter>
 					<ParameterName><![CDATA[speedNurse]]></ParameterName>
 				</Parameter>
-			</Parameters>
+			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[СРесурсами : Simulation]]></Title>
+				<Title><![CDATA[СРесурсами : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>0.004</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
-				<InitialDate><![CDATA[1775898600000]]></InitialDate>
-				<InitialTime><![CDATA[0.0]]></InitialTime>
-				<FinalDate><![CDATA[1797498600000]]></FinalDate>
-				<FinalTime><![CDATA[250.0]]></FinalTime>
+				<InitialDate><![CDATA[1775898600000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1797498600000]]></FinalDate>	
+				<FinalTime><![CDATA[250.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
 	</Experiments>
 	<ModelResources>
 		<Resource>
-			<Id>1775594879999</Id>
 			<Path><![CDATA[3d/box_closed.dae]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
 		<Resource>
-			<Id>1775594879998</Id>
 			<Path><![CDATA[3d/officeworker.dae]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
 		<Resource>
-			<Id>1775594879997</Id>
 			<Path><![CDATA[hospital_kitchen_floorplan.png]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
 		<Resource>
-			<Id>1781812027032</Id>
 			<Path><![CDATA[3d/bottle_1.dae]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
@@ -9607,68 +9790,4 @@ if (совпадение) {
 		<VersionBuild>5</VersionBuild>
     </RequiredLibraryReference>
 </Model>
-<ConvertersApplied>
-	<Uuid>9f7858c9-b2c8-4ead-9244-fd08833f642b</Uuid>
-	<Uuid>404652e6-561a-404c-aab2-ab7415f40ef5</Uuid>
-	<Uuid>6fd6cd57-6dfe-4fc6-be0b-c74065351957</Uuid>
-	<Uuid>3325dc48-3ad4-41e3-836f-dfd0e98fe1ed</Uuid>
-	<Uuid>bb27038a-0f3a-48bb-b235-4a44066a14aa</Uuid>
-	<Uuid>3f69ef3d-706e-41a6-8af0-11658c5eef68</Uuid>
-	<Uuid>3f6fe405-e047-4304-91d6-6eee206d1106</Uuid>
-	<Uuid>820d2b51-5b4a-48e7-b0b6-e46418e3c0f2</Uuid>
-	<Uuid>630818fa-8975-4b70-976f-03180dce01db</Uuid>
-	<Uuid>7c7e471c-004e-495e-a4ad-d840620ab38e</Uuid>
-	<Uuid>3e38ff63-1f70-4ec0-b42c-e879b146785d</Uuid>
-	<Uuid>b1eb86e4-14b3-405c-8257-56b80f1b485d</Uuid>
-	<Uuid>d55f9fb6-86bb-45ea-9db1-79cecfa0ce91</Uuid>
-	<Uuid>ab77aafd-8f02-4354-b789-928d45b1f73c</Uuid>
-	<Uuid>e4f14fd7-1c4a-42e9-b91d-db2415f475db</Uuid>
-	<Uuid>6d208120-6c7a-45a6-b411-402f18890d9b</Uuid>
-	<Uuid>1816cdd0-177c-4973-9e88-dd8b95318556</Uuid>
-	<Uuid>5c23f62f-06dc-46ad-8ead-688ec434e3e5</Uuid>
-	<Uuid>5c7d7990-3f35-41eb-ae16-d0c16098acc6</Uuid>
-	<Uuid>02a16c52-a834-4f30-b6af-a6aee51a294e</Uuid>
-	<Uuid>f0988929-2718-4984-a1b6-c1f2ce152f1f</Uuid>
-	<Uuid>1c9d9cfe-ea2b-43f9-8f62-dc31d8ed3ae1</Uuid>
-	<Uuid>34cb742a-8ba4-47a7-87e6-f2685fe69e97</Uuid>
-	<Uuid>4fe10751-c399-4752-94b7-30113ad45070</Uuid>
-	<Uuid>c13fe5ac-6466-446e-886a-12df1431b1eb</Uuid>
-	<Uuid>714f9ca2-426e-4bff-8569-2d18f58fdcf8</Uuid>
-	<Uuid>045aeb5f-1087-4ac7-9702-a49404e7f7e8</Uuid>
-	<Uuid>840e9a0a-de98-4b7d-a172-f9bbda2d6b98</Uuid>
-	<Uuid>e342358b-75ed-4812-9376-6043fb6cb473</Uuid>
-	<Uuid>f3d5ccdc-1bb3-466f-871d-f6b92a26cbb4</Uuid>
-	<Uuid>59acb6fb-561c-4038-b722-a596a748b3c7</Uuid>
-	<Uuid>be7e6726-05c0-4228-821d-a8df91aeb5bc</Uuid>
-	<Uuid>df4a6a60-9ce8-4c6c-91c0-ad5a5d732259</Uuid>
-	<Uuid>47491eb9-4606-42bd-8399-125a2b95fded</Uuid>
-	<Uuid>9b2d1306-5d19-439a-8f2c-b144dd7e22fa</Uuid>
-	<Uuid>ef421152-8732-4f97-9acb-c8e9a6890d5e</Uuid>
-	<Uuid>d48f8080-25b1-44f5-8322-7bf2712ff974</Uuid>
-	<Uuid>6c4de826-daad-4cd4-b703-51dfe803e822</Uuid>
-	<Uuid>01af22d6-6889-4e98-a3df-e6eddc40fc92</Uuid>
-	<Uuid>ea3b3dbe-cca2-4bde-957b-feaef7e18789</Uuid>
-	<Uuid>e737c8c6-b526-4f88-b89e-554e205b0614</Uuid>
-	<Uuid>efd24e87-d7f7-425f-9cb0-3ee17c7b2116</Uuid>
-	<Uuid>a62607e6-047e-4910-a1ec-5426bf9283b5</Uuid>
-	<Uuid>64dceb5b-de05-47c7-8e40-e9b293e80d75</Uuid>
-	<Uuid>8d51c652-6aee-4de8-ba03-47b289a13ec5</Uuid>
-	<Uuid>51d7b5ce-5664-4750-b1a0-fabcdc31e49a</Uuid>
-	<Uuid>6522e3af-aa9e-421c-b667-e11db73cd8ca</Uuid>
-	<Uuid>9ac073a0-7abf-4dff-826f-9c44d4780590</Uuid>
-	<Uuid>2da9c21c-adc7-405a-a36e-46fbd9dfcd42</Uuid>
-	<Uuid>fe4d1053-9c84-4221-bac7-cb489a7064ff</Uuid>
-	<Uuid>1f005f88-e6d7-4bdc-81fa-3acf4c89cf64</Uuid>
-	<Uuid>42dc5a7c-d7b1-4653-92b9-9359b46cc2d4</Uuid>
-	<Uuid>e25721a9-34f9-479c-a4c3-31f5ec9e117d</Uuid>
-	<Uuid>506d1de3-06df-4131-9e88-e43f1768e3d8</Uuid>
-	<Uuid>e6625695-25a2-43d0-9056-1e9a1a594b1e</Uuid>
-	<Uuid>91990287-4edf-4e38-aa6c-66d0e906807b</Uuid>
-	<Uuid>2216cdd0-177c-5678-9e88-dd8b95312234</Uuid>
-	<Uuid>1737c8c6-b526-4dd8-589e-ee4e205b06f4</Uuid>
-	<Uuid>6a43bef6-8b70-4253-a828-82c3ab399655</Uuid>
-	<Uuid>0a27038a-0f3a-48bb-b235-4a44066a1402</Uuid>
-	<Uuid>0a9ec2c3-5e18-4c0a-a183-fd86d9d9a08b</Uuid>
-	<Uuid>2216cdd0-177c-5678-9e88-dd8b95313334</Uuid>
-</ConvertersApplied>
 </AnyLogicWorkspace>
